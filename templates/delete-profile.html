@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=\, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/static/styles/styles.css"/>
+    <title>LogiSolutions</title>
+
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <!-- Navigation -->
+        <a id="logo" href="#">
+            <img id="logo-img" src="/static/images/logo.png" alt="logo"/>
+        </a>
+
+        <nav>
+            <!-- If there is a user profile -->
+            <div class="user">
+                <a href="#">Catalogue</a>
+                <a href="#">Add Offer</a>
+                <a href="#">Profile</a>
+                <a href="#">LogOut</a>
+
+            </div>
+
+            <!-- If user profile has NOT been created -->
+            <div class="guest">
+                <a href="#">Catalogue</a>
+                <a href="#">SignIn</a>   <!-- Това е за регистрация -->
+                <a href="#">LogIn</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="edit">
+
+            <div class="form">
+                <h1>Are you sure you want to delete your profile?</h1>
+                
+                <!-- Delete Profile Form -->
+                <form id='delete' class="register-form">
+                    <!-- Confirm Button -->
+                    <button type="submit">Yes</button>
+
+                </form>
+                <!-- End Delete Profile Form -->
+            </div>
+            
+        </section>
+    </main>
+</div>
+<!-- footer -->
+<footer>
+    <p>@LogiSolutions - SoftUni final Exam. Vladislav Vasilev.</p>
+</footer>
+</body>
+</html>
