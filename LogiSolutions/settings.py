@@ -24,7 +24,7 @@ LOGI_SOLUTIONS_APPS = (
     'LogiSolutions.venv',
     'LogiSolutions.accounts',
     'LogiSolutions.common',
-    'LogiSolutions.photos'
+    'LogiSolutions.photos',
 )
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOGI_SOLUTIONS_APPS
 
