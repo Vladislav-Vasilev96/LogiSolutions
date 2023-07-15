@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Logout Confirmation</title>
+</head>
+<body>
+    <h2>Are you sure you want to proceed with the logout?</h2>
+    <form action="{% url 'logout_confirm' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Log out</button>
+    </form>
+</body>
+</html>

@@ -1,6 +1,6 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth.models import PermissionsMixin, AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin, AbstractBaseUser, Permission, Group
 from django.db import models
 
 from LogiSolutions.core.model_mixins import Gender
@@ -13,11 +13,11 @@ class CustomUserHandler(BaseUserManager):
             raise ValueError("The given username must be set")
 
         user = self.model(email=email, **extra_fields)
-        user.password = make_password(password)
+        user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_user(self, email, password=None, **extra_fields ):
+    def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError('You must set a value for the Username field.')
 
@@ -37,7 +37,7 @@ class CustomUserHandler(BaseUserManager):
         return self._create_user(email, password, **extra_fields)
 
 
-class CustomUser(AbstractBaseUser,PermissionsMixin):
+class CustomUser(PermissionsMixin, AbstractBaseUser):
     email = models.EmailField(
         null=False,
         blank=False,
@@ -60,13 +60,16 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
 
     REQUIRED_FIELDS = []
 
-    objects =   ()
+    objects = CustomUserHandler()
+
+    class Meta:
+        default_related_name = 'accounts_custom_users'
 
     def __str__(self):
         return self.email
 
 
-class Profile(PermissionsMixin, AbstractBaseUser, ):
+class Profile(models.Model):
     first_name = models.CharField(
         max_length=30,
         null=False,
@@ -82,8 +85,9 @@ class Profile(PermissionsMixin, AbstractBaseUser, ):
         unique=True,
     )
     age = models.PositiveIntegerField(
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
+        default=0,
     )
 
     gender = models.CharField(
@@ -91,13 +95,14 @@ class Profile(PermissionsMixin, AbstractBaseUser, ):
         max_length=Gender.max_length(),
 
     )
-    profileimage = models.URLField(
+    profile_image = models.URLField(
         blank=True,
         null=False,
     )
-    profile=models.OneToOneField(
+    profile = models.OneToOneField(
         CustomUser,
         on_delete=models.CASCADE,
+        related_name='profile',
     )
 
     def get_full_name(self):
