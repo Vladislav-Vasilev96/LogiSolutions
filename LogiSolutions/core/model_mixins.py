@@ -18,6 +18,13 @@ class Gender(ChoicesStringsMixin,ChoicesMixin, Enum):
     FEMALE = 'female'
     DO_NOT_SHOW = 'do not show'
 
+class Status(ChoicesStringsMixin,ChoicesMixin, Enum):
+    DELIVERED = 'delivered'
+    AWAITING_DELIVERY = 'waiting for  delivery'
+    WAITING_FOR_LOAD = 'waiting for load'
+    ON_BREAK = 'on a break'
+    IN_PROCESS = 'in process'
+
 class StrFromFieldsMixin:
     str_fields = ()
 

@@ -11,7 +11,7 @@
  h2 {
   text-align: center;
   font-size: 50px;
-  color: rgb(241, 133, 10);
+  color: rgb(28, 25, 23);
 }
 
 .offer {
@@ -23,7 +23,7 @@
   height: 50vh;
   padding-bottom: 1rem;
   margin: 20px auto;
-  background-color: rgb(250, 190, 134);
+  background-color: rgb(58, 51, 45);
   border-radius: 5px;
   border: 1px solid rgb(245, 90, 90);
   box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.55);

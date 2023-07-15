@@ -37,14 +37,14 @@ class RegisterUserView(generic_views.CreateView):
 
 class LoginUserView(LoginView):
     redirect_authenticated_user = True
-
+    template_name = 'profiles/login.html'
     def get_success_url(self):
-        return reverse_lazy('home')
+        return reverse_lazy('IndexView')
 
 
 class LogoutUserView(LogoutView):
     def get_next_page(self):
-        return reverse_lazy('home')
+        return reverse_lazy('IndexView')
 
 
 class DetailUserView(generic_views.DetailView):
@@ -65,7 +65,7 @@ class EditUserView(generic_views.UpdateView):
     TEMPLATE_NAME = 'Edit Profile'
     model = Profile
     template_name = 'profiles/edit-profile.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('IndexView')
     fields = ('profile_image', 'first_name', 'last_name',)
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -77,7 +77,7 @@ class EditUserView(generic_views.UpdateView):
 class DeleteUserView(CustomPermissionMixin, generic_views.DeleteView):
     TEMPLATE_NAME = 'Delete Profile'
     model = CustomUser
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('IndexView')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

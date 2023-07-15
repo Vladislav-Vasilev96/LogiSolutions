@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
 body {
-  color:rgb(241, 133, 10);
-  background: rgb(255,249,205);
-  background: linear-gradient(94deg, rgba(255,249,205,1) 0%, rgba(255,189,138,1) 100%);
+  color: rgb(10, 241, 48);
+  background: rgb(91, 88, 65);
+  background: linear-gradient(94deg, rgb(131, 126, 91) 0%, rgb(105, 89, 77) 100%);
   margin: auto;
   padding: 0;
   overflow: auto;
@@ -33,7 +33,7 @@ nav {
 
 nav a {
   font-size: 1.5rem;
-  color: rgb(241, 133, 10);
+  color: rgb(220, 202, 182);
   font-weight: 400;  
 }
 
@@ -44,15 +44,15 @@ header a {
   
 }
 nav a:hover {
-  color: rgb(153, 60, 7);
+  color: rgb(194, 120, 79);
   text-decoration: underline;
 
   
 }
 
 footer {
-  background-color: #e0ecf1;
-  color:  rgb(241, 168, 10);
+  background-color: #5b95ad;
+  color: rgb(199, 168, 101);
   font-weight: bolder;
   text-align: center;
   position: fixed;
@@ -81,6 +81,6 @@ footer p {
   font-size: 60px;
   font-weight: 100;
   text-align: center;
-  color: rgb(241, 133, 10);
+  color: rgb(100, 84, 67);
   text-transform: capitalize;
 }
