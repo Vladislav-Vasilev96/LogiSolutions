@@ -17,24 +17,20 @@
             <img id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/>
         </a>
 
-        <nav>
-            {% if profile %}
-                <div class="user">
-                    <a href="{% url 'CatalogView' %}">Catalogue</a>
-                    <a href="{% url '' %}">Add Offer</a>
-                    <a href="{% url 'DetailsProfileView' profile.pk  %}">Profile</a>
-                    <a href="#">Logout</a>
-
-                </div>
-           {% else %}
-                <!-- If user profile has NOT been created -->
-                <div class="guest">
-                    <a href="{% url 'CatalogView' %}">Catalogue</a>
-                    <a href="{% url 'RegisterView' %}">SignIn</a>
-                    <a href="{% url 'LoginView' %}">LogIn</a>
-                </div>
-            {% endif %}
-        </nav>
+    <nav>
+        {% if user.is_authenticated %}
+            <div class="user">
+                <a href="{% url 'CatalogView' %}">Catalogue</a>
+                <a href="{% url 'LogoutConfirmationView' %}">Logout</a>
+         </div>
+        {% else %}
+            <div class="guest">
+                <a href="{% url 'CatalogView' %}">Catalogue</a>
+                <a href="{% url 'RegisterView' %}">SignIn</a>
+                <a href="{% url 'LoginView' %}">LogIn</a>
+            </div>
+    {% endif %}
+</nav>
     </header>
 
     <main>

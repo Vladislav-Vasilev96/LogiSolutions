@@ -1,8 +1,7 @@
-from django import views
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.views import LoginView, LogoutView
-from django.shortcuts import render, redirect
-from django.urls import path, reverse_lazy
+from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from django.views import generic as generic_views
 from LogiSolutions.accounts.forms import RegisterUserForm, ChangePasswordForm
 from LogiSolutions.accounts.models import CustomUser, Profile
@@ -22,9 +21,10 @@ class RegisterUserView(generic_views.CreateView):
     template_name = 'profiles/create-profile.html'
     success_url = reverse_lazy('IndexView')
     form_class = RegisterUserForm
+
     def form_valid(self, form):
         result = super().form_valid(form)
-        login(self.request,self.object)
+        login(self.request, self.object)
         return result
 
     def get_context_data(self, **kwargs):
@@ -33,18 +33,36 @@ class RegisterUserView(generic_views.CreateView):
         return context
 
 
-
-
 class LoginUserView(LoginView):
-    redirect_authenticated_user = True
     template_name = 'profiles/login.html'
+
     def get_success_url(self):
         return reverse_lazy('IndexView')
 
 
+# class LoginUserView(LoginView):
+#     redirect_authenticated_user = True
+#     template_name = 'profiles/login.html'
+#     success_url = reverse_lazy('IndexView')
+#
+#
+#     def get_success_url(self):
+#         if self.success_url:
+#             return self.success_url
+#         return super().success_url
+
+class LogoutConfirmationView(generic_views.TemplateView):
+    template_name = 'profiles/logout-confromation.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['logout_url'] = reverse_lazy('LogoutView')
+        return context
+
+
 class LogoutUserView(LogoutView):
-    def get_next_page(self):
-        return reverse_lazy('IndexView')
+    template_name = 'profiles/logout.html'
+    # next_page = reverse_lazy('IndexView')
 
 
 class DetailUserView(generic_views.DetailView):

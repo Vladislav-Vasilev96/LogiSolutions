@@ -1,12 +1,12 @@
-<html>
-<head>
-    <title>Logout Confirmation</title>
-</head>
-<body>
-    <h2>Are you sure you want to proceed with the logout?</h2>
-    <form action="{% url 'logout_confirm' %}" method="post">
+{% extends 'common/index.html' %}
+{% load static %}
+{% block content %}
+
+    <h1>Logout Confirmation</h1>
+    <p>Are you sure you want to logout?</p>
+    <form action="{% url 'LogoutView' %}" method="post">
         {% csrf_token %}
-        <button type="submit">Yes, Log out</button>
+        <button type="submit">Logout</button>
     </form>
-</body>
-</html>
+    <a href="{% url 'IndexView' %}">Cancel</a>
+{% endblock %}
