@@ -25,6 +25,11 @@ class Status(ChoicesStringsMixin,ChoicesMixin, Enum):
     ON_BREAK = 'on a break'
     IN_PROCESS = 'in process'
 
+
+STATUS_CHOICES = [
+        ('available', 'Available'),
+        ('on_way', 'On the Way'),
+    ]
 class StrFromFieldsMixin:
     str_fields = ()
 
