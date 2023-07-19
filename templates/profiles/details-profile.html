@@ -1,0 +1,47 @@
+{% extends 'common/index.html' %}
+{% load static %}
+{% block content %}
+
+    <main>
+
+        <!-- Profile Details Section -->
+
+        <section id="details">
+            <div id="details-wrapper">
+                <h2>Profile Details</h2>
+                <!-- if the user has a profile image -->
+                <img id="details-img" src="https://images.pexels.com/photos/3792581/pexels-photo-3792581.jpeg"
+                     alt="profile img"/>
+
+                <!-- if the user has NO profile image -->
+                <img id="details-img" src="/staticfiles/images/default.jpg" alt="profile img"/>
+
+                <!-- user's full name -->
+                <p id="details-title">Mariya Petrova</p>
+
+                <div id="info-wrapper">
+                    <div id="details-description">
+                        <!-- email -->
+                        <p>
+                            mariya@abv.bg
+                        </p>
+                        <!-- age -->
+                        <p>
+                            Age: 18
+                        </p>
+                        <!-- number of posts -->
+                        <p id="nutrition">Posts: 3</p>
+
+                    </div>
+
+                    <!--Edit and Delete buttons -->
+                    <div id="action-buttons">
+                        <a href="#" id="edit-btn">Edit</a>
+                        <a href="#" id="delete-btn">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}
