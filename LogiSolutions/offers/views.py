@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.views import generic as generic_views
+
+
+class CreateOfferView(generic_views.CreateView):
+    pass
+
+
+class UpdateOfferView(generic_views.UpdateView):
+    pass
