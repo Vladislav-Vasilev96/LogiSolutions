@@ -9,3 +9,7 @@ class CreateOfferView(generic_views.CreateView):
 
 class UpdateOfferView(generic_views.UpdateView):
     pass
+
+class DeleteOfferView(generic_views.DeleteView):
+    pass
+
