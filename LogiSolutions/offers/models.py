@@ -1,6 +1,7 @@
 from django.db import models
 
-from LogiSolutions.core.model_mixins import STATUS_CHOICES, WEIGHT_CHOICES, TypesOfTruck
+from LogiSolutions.accounts.models import CustomUser
+from LogiSolutions.core.model_mixins import WEIGHT_CHOICES, TypesOfTruck, VehicleStatus, CargoStatus
 
 
 class Offers(models.Model):
@@ -9,8 +10,8 @@ class Offers(models.Model):
 
 class Vehicle(models.Model):
     LICENSE_PLATE_MAX_LENGHT = 20
-    VEHICLE_TYPE_MAX_LENGHT = 100
     CURRENT_LOCATION_MAX_LENGHT = 150
+
     license_plate = models.CharField(
         max_length=LICENSE_PLATE_MAX_LENGHT
     )
@@ -19,10 +20,10 @@ class Vehicle(models.Model):
         choices=TypesOfTruck.choices(),
         max_length=TypesOfTruck.max_length()
     )
-    max_weight = models.DecimalField(
+    max_weight = models.CharField(
+        max_length=WEIGHT_CHOICES.choices(),
         choices=WEIGHT_CHOICES.choices(),
-        max_digits=10,
-        decimal_places=2
+
     )
     current_location = models.CharField(
         max_length=CURRENT_LOCATION_MAX_LENGHT,
@@ -30,14 +31,9 @@ class Vehicle(models.Model):
         blank=True,
     )
 
-    owner = models.ForeignKey(
-        'auth.User',
-        on_delete=models.CASCADE)
-
     status = models.CharField(
-        max_length=10,
-        choices=STATUS_CHOICES,
-        default='ready',
+        max_length=VehicleStatus.max_length(),
+        choices=VehicleStatus.choices(),
     )
 
     description = models.TextField(
@@ -45,13 +41,20 @@ class Vehicle(models.Model):
         blank=True,
     )
 
+    owner = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE
+    )
+
     def __str__(self):
         return self.license_plate
 
 
 class Cargo(models.Model):
+    NAME_MAX_LENGTH = 100
+
     name = models.CharField(
-        max_length=255
+        max_length=NAME_MAX_LENGTH
     )
 
     location = models.CharField(
@@ -75,14 +78,14 @@ class Cargo(models.Model):
         blank=False,
     )
 
-    weight = models.DecimalField(
+    weight = models.CharField(
+        max_length= WEIGHT_CHOICES.max_length(),
         choices=WEIGHT_CHOICES.choices(),
-        max_digits=10,
-        decimal_places=2
     )
 
     cargo_type = models.CharField(
-        max_length=100
+        choices=CargoStatus.choices(),
+        max_length=CargoStatus.choices(),
     )
 
     departure_date = models.DateField(
@@ -104,7 +107,8 @@ class Cargo(models.Model):
         null=True,
         blank=True,
     )
-#     owner = models.ForeignKey(
-#     'auth.User',
-#     on_delete=models.CASCADE
-#     )
+
+    owner = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE
+    )
