@@ -4,10 +4,6 @@ from LogiSolutions.accounts.models import CustomUser
 from LogiSolutions.core.model_mixins import WEIGHT_CHOICES, TypesOfTruck, VehicleStatus, CargoStatus
 
 
-class Offers(models.Model):
-    pass
-
-
 class Vehicle(models.Model):
     LICENSE_PLATE_MAX_LENGHT = 20
     CURRENT_LOCATION_MAX_LENGHT = 150
@@ -51,7 +47,9 @@ class Vehicle(models.Model):
 
 
 class Cargo(models.Model):
+    DESTINATION_MAX_LENGTH = 200
     NAME_MAX_LENGTH = 100
+    CARGO_TYPE_MAX_LENGTH = 100
 
     name = models.CharField(
         max_length=NAME_MAX_LENGTH
@@ -70,7 +68,7 @@ class Cargo(models.Model):
     destination = models.CharField(
         null=False,
         blank=False,
-        max_length=255
+        max_length=DESTINATION_MAX_LENGTH
     )
 
     total_km = models.IntegerField(
@@ -79,13 +77,12 @@ class Cargo(models.Model):
     )
 
     weight = models.CharField(
-        max_length= WEIGHT_CHOICES.max_length(),
+        max_length=WEIGHT_CHOICES.max_length(),
         choices=WEIGHT_CHOICES.choices(),
     )
 
     cargo_type = models.CharField(
-        choices=CargoStatus.choices(),
-        max_length=CargoStatus.choices(),
+        max_length=CARGO_TYPE_MAX_LENGTH,
     )
 
     departure_date = models.DateField(
@@ -100,7 +97,8 @@ class Cargo(models.Model):
     )
 
     status = models.CharField(
-        max_length=100
+        choices=CargoStatus.choices(),
+        max_length=CargoStatus.max_length(),
     )
 
     description = models.TextField(
@@ -112,3 +110,27 @@ class Cargo(models.Model):
         CustomUser,
         on_delete=models.CASCADE
     )
+
+
+class Warehouse(models.Model):
+    name = models.CharField(
+        max_length=100
+
+    )
+    location = models.CharField(
+        max_length=200
+    )
+    capacity = models.PositiveIntegerField(
+
+    )
+    current_inventory = models.PositiveIntegerField(
+        default=0
+    )
+    contact_person = models.CharField(
+        max_length=100
+    )
+
+    def __str__(self):
+        return self.name
+
+
