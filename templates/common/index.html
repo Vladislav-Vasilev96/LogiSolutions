@@ -15,22 +15,28 @@
         <!-- Navigation -->
         <a id="logo" href="#">
             <img id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/>
+
         </a>
 
-    <nav>
-        {% if user.is_authenticated %}
-            <div class="user">
-                <a href="{% url 'CatalogView' %}">Catalogue</a>
-                <a href="{% url 'LogoutConfirmationView' %}">Logout</a>
-         </div>
-        {% else %}
-            <div class="guest">
-                <a href="{% url 'CatalogView' %}">Catalogue</a>
-                <a href="{% url 'RegisterView' %}">SignIn</a>
-                <a href="{% url 'LoginView' %}">LogIn</a>
-            </div>
-    {% endif %}
-</nav>
+        <nav>
+            {% if user.is_authenticated %}
+                <div class="user">
+                    <a href="{% url 'CatalogView' %}">Catalogue</a>
+                    <a href="#">About</a>
+                    <a href="#">Add Offer</a>
+                    <a href="{% url 'DetailsProfileView' pk=user.pk %}">Profile</a>
+                    <a href="{% url 'LogoutConfirmationView' %}">Logout</a>
+
+
+                </div>
+            {% else %}
+                <div class="guest">
+                    <a href="{% url 'CatalogView' %}">Catalogue</a>
+                    <a href="{% url 'RegisterView' %}">SignIn</a>
+                    <a href="{% url 'LoginView' %}">LogIn</a>
+                </div>
+            {% endif %}
+        </nav>
     </header>
 
     <main>
@@ -39,11 +45,11 @@
         {% endblock %}
 
 
-      </main>
-    </div>
+    </main>
+</div>
 
 <footer>
     <p>@LogiSolutions - SoftUni final Exam. Vladislav Vasilev.</p>
 </footer>
-  </body>
+</body>
 </html>

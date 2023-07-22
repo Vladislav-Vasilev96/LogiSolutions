@@ -28,17 +28,13 @@ class VehicleStatus(ChoicesStringsMixin, ChoicesMixin, Enum):
     IN_PROCESS = 'in process'
 
 
-
-
 class CargoStatus(ChoicesStringsMixin, ChoicesMixin, Enum):
     PENDING = 'Pending'
     IN_TRANSIT = 'In Transit'
     DELIVERED = 'Delivered'
+    TO_STORAGE = 'To storage '
     LOST = 'Lost'
     CANCELLED = 'Cancelled'
-
-
-
 
 
 class WEIGHT_CHOICES(ChoicesStringsMixin, ChoicesMixin, Enum):
@@ -55,6 +51,13 @@ class TypesOfTruck(ChoicesStringsMixin, ChoicesMixin, Enum):
     CAR_CARRIER_TRAILER = 'Car Carrier Trailer'
     GARBAGE_TRUCK = 'Garbage truck'
     MAIL_TRUCK = 'Mail truck'
+
+
+class PaymentsStatus(ChoicesStringsMixin, ChoicesMixin, Enum):
+    PAID = 'Paid'
+    PENDING = 'Pending'
+    OVERDUE = 'Overdue'
+
 
 
 class StrFromFieldsMixin:

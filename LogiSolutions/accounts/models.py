@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import PermissionsMixin, AbstractBaseUser, Permission, Group
@@ -99,10 +100,10 @@ class Profile(models.Model):
         blank=True,
         null=False,
     )
-    profile = models.OneToOneField(
-        CustomUser,
-        on_delete=models.CASCADE,
-        related_name='profile',
+    user = models.OneToOneField(
+        get_user_model(),
+        on_delete = models.CASCADE,
+        primary_key=True,
     )
 
     def get_full_name(self):
