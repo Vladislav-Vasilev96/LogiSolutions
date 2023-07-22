@@ -73,11 +73,11 @@ class DetailUserView(generic_views.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.object.user
-        profile = Profile.objects.filter(pk=user.id).get()
+        profile = Profile.objects.get(pk=user.id)
         context['profile'] = profile
+        context['user'] = user
         context['template_name'] = self.TEMPLATE_NAME
         return context
-
 
 class EditUserView(generic_views.UpdateView):
     TEMPLATE_NAME = 'Edit Profile'
@@ -123,3 +123,5 @@ class ChangePasswordView(CustomPermissionMixin, generic_views.UpdateView):
         context = super().get_context_data(**kwargs)
         context['template_name'] = self.TEMPLATE_NAME
         return context
+
+
