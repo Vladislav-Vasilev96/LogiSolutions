@@ -24,8 +24,8 @@
                 <div class="user">
                     <a href="{% url 'CatalogView' %}">Catalogue</a>
                     <a href="#">About</a>
-                     {% if profile.type == 'Truck Owner' %}
-                    <a href="#">Add Truck</a>
+                     {% if profile.type == 'Vehicle Owner' %}
+                    <a href="#">Add Vehicle</a>
                          {% elif profile.type == 'Cargo Owner' %}
                          <a href="#">Add Cargo</a>
                          {% elif profile.type == 'Warehouse Owner' %}

@@ -91,7 +91,7 @@ class Profile(models.Model):
         default=0,
         validators=(
             MaxValueValidator(80),
-            MinValueValidator(18)
+            MinValueValidator(18),
         )
 
     )
