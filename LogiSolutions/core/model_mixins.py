@@ -4,7 +4,7 @@ from enum import Enum
 class ChoicesMixin:
     @classmethod
     def choices(cls):
-        return [(choice.value, choice.name) for choice in cls]
+        return [(choice.value, choice.value) for choice in cls]
 
 
 class ChoicesStringsMixin:
@@ -58,6 +58,11 @@ class PaymentsStatus(ChoicesStringsMixin, ChoicesMixin, Enum):
     PENDING = 'Pending'
     OVERDUE = 'Overdue'
 
+
+class ProfileType(ChoicesStringsMixin, ChoicesMixin, Enum):
+    Vehicle_OWNER = 'Vehicle Owner'
+    CARGO_OWNER = 'Cargo Owner'
+    WAREHOUSE = 'Warehouse Owner'
 
 
 class StrFromFieldsMixin:

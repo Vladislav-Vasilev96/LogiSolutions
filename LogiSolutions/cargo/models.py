@@ -1,11 +1,5 @@
-# from django.db import models
-#
-# from LogiSolutions.accounts.models import CustomUser
-# from LogiSolutions.core.model_mixins import WEIGHT_CHOICES, TypesOfTruck, VehicleStatus, CargoStatus
-#
-#
+from django.db import models
 
-#
 # class Cargo(models.Model):
 #     DESTINATION_MAX_LENGTH = 200
 #     NAME_MAX_LENGTH = 100
@@ -70,6 +64,3 @@
 #         CustomUser,
 #         on_delete=models.CASCADE
 #     )
-#
-#
-

@@ -1,10 +1,23 @@
 from django.shortcuts import render
 from django.views import generic as generic_views
 
+from LogiSolutions.accounts.models import Profile
+
 
 class IndexView(generic_views.TemplateView):
     template_name = 'common/index.html'
 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        try:
+            profile = Profile.objects.get(user=user)
+            context['profile'] = profile
+        except Profile.DoesNotExist:
+            context['profile'] = None
+        context['user'] = user
+        return context
 
 class CatalogView(generic_views.ListView):
     TEMPlATE_NAME = 'catalog'

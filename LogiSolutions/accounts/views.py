@@ -1,8 +1,9 @@
-from django.contrib.auth import get_user_model, login
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import get_user_model, login, logout
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic as generic_views
+
 from LogiSolutions.accounts.forms import RegisterUserForm, ChangePasswordForm
 from LogiSolutions.accounts.models import CustomUser, Profile
 
@@ -62,7 +63,7 @@ class LogoutConfirmationView(generic_views.TemplateView):
 
 class LogoutUserView(LogoutView):
     template_name = 'profiles/logout.html'
-    # next_page = reverse_lazy('IndexView')
+    # next_page = reverse_lazy('IndexView')`
 
 
 class DetailUserView(generic_views.DetailView):
@@ -84,7 +85,7 @@ class EditUserView(generic_views.UpdateView):
     model = Profile
     template_name = 'profiles/edit-profile.html'
     success_url = reverse_lazy('IndexView')
-    fields = ('profile_image', 'first_name', 'last_name',)
+    fields = ( 'first_name', 'last_name','profile_image','gender','age' , 'type')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -103,25 +104,27 @@ class DeleteUserView(CustomPermissionMixin, generic_views.DeleteView):
         return context
 
 
-class ChangePasswordView(CustomPermissionMixin, generic_views.UpdateView):
-    TEMPLATE_NAME = 'Change Password'
-    model = Profile
+class ChangePasswordView(PasswordChangeView):
     form_clas = ChangePasswordForm
-    fields = '__all__'
     template_name = 'profiles/change-password.html'
 
-    def get_form_class(self):
-        return self.form_clas
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        logout(self.request)
+        return response
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['user'] = self.request.user
-        kwargs.pop('instance')
-        return kwargs
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['template_name'] = self.TEMPLATE_NAME
-        return context
+    def get_success_url(self):
+        return reverse('LoginView')
 
 
+# class ChangePasswordView(auth_views.PasswordChangeView):
+#     template_name = 'user/change_password.html'
+#     form_class = ChangePasswordForm
+#
+#     def form_valid(self, form):
+#         response = super().form_valid(form)
+#         logout(self.request)
+#         return response
+#
+#     def get_success_url(self):
+#         return reverse('login user')

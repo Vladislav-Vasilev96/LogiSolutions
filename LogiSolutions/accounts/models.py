@@ -1,10 +1,10 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.base_user import BaseUserManager
-from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import PermissionsMixin, AbstractBaseUser, Permission, Group
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
-from LogiSolutions.core.model_mixins import Gender
+from LogiSolutions.core.model_mixins import Gender, ProfileType
 
 
 class CustomUserHandler(BaseUserManager):
@@ -89,6 +89,11 @@ class Profile(models.Model):
         blank=True,
         null=True,
         default=0,
+        validators=(
+            MaxValueValidator(80),
+            MinValueValidator(18)
+        )
+
     )
 
     gender = models.CharField(
@@ -100,9 +105,14 @@ class Profile(models.Model):
         blank=True,
         null=False,
     )
+    type = models.CharField(
+        choices=ProfileType.choices(),
+        max_length=ProfileType.max_length(),
+        default="Cargo Owner",
+    )
     user = models.OneToOneField(
         get_user_model(),
-        on_delete = models.CASCADE,
+        on_delete=models.CASCADE,
         primary_key=True,
     )
 
