@@ -24,6 +24,9 @@ LOGI_SOLUTIONS_APPS = (
     'LogiSolutions.accounts',
     'LogiSolutions.common',
     'LogiSolutions.photos',
+    'LogiSolutions.cargo',
+    'LogiSolutions.vehicle',
+    'LogiSolutions.warehouse',
 )
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOGI_SOLUTIONS_APPS
 
@@ -94,7 +97,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (
-        BASE_DIR / 'staticfiles',
+    BASE_DIR / 'staticfiles',
 )
 
 MEDIA_URL = 'media/'

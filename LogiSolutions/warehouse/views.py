@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+class CreateWarehouseView():
+    pass
+
+class EditWarehouseView():
+    pass
+class DetailsWarehouseView():
+    pass
+class DeleteWarehouseView():
+    pass
