@@ -9,28 +9,25 @@
         <section id="details">
             <div id="details-wrapper">
                 <h2>Profile Details</h2>
-                <!-- if the user has a profile image -->
-                <img id="details-img" src="https://images.pexels.com/photos/3792581/pexels-photo-3792581.jpeg"
-                     alt="profile img"/>
-
+                {% if profile.profile_image %}
+                <img  src="{{  profile.profile_image }}" alt="" width="200" height="200" />
+                {% else %}
                 <!-- if the user has NO profile image -->
-                <img id="details-img" src="/staticfiles/images/default.jpg" alt="profile img"/>
-
+                <img id="details-img" src="{% static 'images/default.png' %}" alt="profile img"/>
+                {% endif %}
                 <!-- user's full name -->
-                <p id="details-title">Mariya Petrova</p>
+                <p id="details-title">Name: {{ profile.first_name }} {{ profile.last_name }}</p>
 
                 <div id="info-wrapper">
                     <div id="details-description">
                         <!-- email -->
                         <p>
-                            {{ profile.email }}
+                            Email: {{ profile.email }}
                         </p>
                         <!-- age -->
                         <p>
-                            {{ object.email }}
+                            Age: {{ profile.age }}
                         </p>
-                        <!-- number of posts -->
-                        <p id="nutrition">Posts: 3</p>
 
                     </div>
 
@@ -38,6 +35,8 @@
                     <div id="action-buttons">
                         <a href="{% url 'EditProfileView' pk=user.pk %}" id="edit-btn">Edit</a>
                         <a href="#" id="delete-btn">Delete</a>
+                        <a href="{% url 'ChangePasswordView' pk=user.pk %}" id="change-password-btn">Change Password</a>
+
                     </div>
                 </div>
             </div>

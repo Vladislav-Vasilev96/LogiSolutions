@@ -20,15 +20,23 @@
 
         <nav>
             {% if user.is_authenticated %}
+
                 <div class="user">
                     <a href="{% url 'CatalogView' %}">Catalogue</a>
                     <a href="#">About</a>
-                    <a href="#">Add Offer</a>
+                     {% if profile.type == 'Truck Owner' %}
+                    <a href="#">Add Truck</a>
+                         {% elif profile.type == 'Cargo Owner' %}
+                         <a href="#">Add Cargo</a>
+                         {% elif profile.type == 'Warehouse Owner' %}
+                         <a href="#">Add Warehouse</a>
+                    {% endif %}
                     <a href="{% url 'DetailsProfileView' pk=user.pk %}">Profile</a>
                     <a href="{% url 'LogoutConfirmationView' %}">Logout</a>
 
 
                 </div>
+
             {% else %}
                 <div class="guest">
                     <a href="{% url 'CatalogView' %}">Catalogue</a>
