@@ -9,7 +9,7 @@ urlpatterns = [
     path('common/', include('LogiSolutions.common.urls')),
     path('vehicle/', include('LogiSolutions.vehicle.urls')),
     path('cargo/', include('LogiSolutions.cargo.urls')),
-    path('warehouse/', include('LogiSolutions.cargo.urls'),
+    path('warehouse/', include('LogiSolutions.warehouse.urls'),
          )
 
 ]

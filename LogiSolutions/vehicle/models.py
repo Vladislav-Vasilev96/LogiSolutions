@@ -37,9 +37,10 @@ class Vehicle(models.Model):
         blank=True,
     )
 
-    owner = models.ForeignKey(
+    owner = models.OneToOneField(
         CustomUser,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        primary_key=True,
     )
 
     def __str__(self):

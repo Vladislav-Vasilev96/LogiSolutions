@@ -6,8 +6,8 @@ from LogiSolutions.warehouse.views import CreateWarehouseView, DeleteWarehouseVi
 urlpatterns = (
     path('create/', CreateWarehouseView.as_view(), name='create warehouse'),
     path('<int:pk>/', include([
-        path('details/', DetailsWarehouseView, name='details warehouse'),
-        path('edit/', EditWarehouseView, name='edit warehouse'),
-        path('delete/', DeleteWarehouseView, name='delete warehouse')
+        path('details/', DetailsWarehouseView.as_view(), name='details warehouse'),
+        path('edit/', EditWarehouseView.as_view(), name='edit warehouse'),
+        path('delete/', DeleteWarehouseView.as_view(), name='delete warehouse')
     ]))
 )

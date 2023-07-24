@@ -27,9 +27,9 @@
                      {% if profile.type == 'Vehicle Owner' %}
                     <a href="{% url 'create vehicle' %}">Add Vehicle</a>
                          {% elif profile.type == 'Cargo Owner' %}
-                         <a href="#">Add Cargo</a>
+                         <a href="{% url 'create cargo' %}">Add Cargo</a>
                          {% elif profile.type == 'Warehouse Owner' %}
-                         <a href="#">Add Warehouse</a>
+                         <a href="{% url 'create warehouse' %}">Add Warehouse</a>
                     {% endif %}
                     <a href="{% url 'DetailsProfileView' pk=user.pk %}">Profile</a>
                     <a href="{% url 'LogoutConfirmationView' %}">Logout</a>
