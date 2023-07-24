@@ -5,27 +5,22 @@
 
 {% block content %}
     <main>
-        <!-- Dashboard Page -->
-        <h2>Fruits</h2>
-        <section id="catalogue">
-            <!-- Display a div "fruit" with information about each post (if any)-->
-
-            <!-- first fruit -->
-            <div class="offer">
-                <!-- fruit image -->
-                <img src="/images/fruit%201.png" alt="example1"/>
-                <!-- fruit name -->
-                <h3 class="title">Pineapple</h3>
-                <!-- fruit description -->
-                <p class="description">The pineapple is a tropical plant with an edible f...</p>
-                <!-- fruit details button -->
-                <a class="details-btn" href="#">More Info</a>
-            </div>
-
-        </section>
-
-        <!-- Display a heading if there are no posts -->
-        <h2>No posts yet.</h2>
-
+       {% if combined_objects %}
+            {% for combined_obj in combined_objects %}
+                <!-- object -->
+                <div class="{{ combined_obj.model_name }}">
+                    <!-- object image -->
+                    <img src="{{ combined_obj.obj.image_URL }}" alt="{{ combined_obj.obj.name }}"/>
+                    <!-- object name -->
+                    <h3 class="title">{{ combined_obj.obj.name }}</h3>
+                    <!-- object description -->
+                    <p class="description">{{ combined_obj.obj.description }}.</p>
+                    <!-- object details button -->
+                    <a class="details-btn" href="{% url 'CatalogView' %}">More Info</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h2>No objects yet.</h2>
+        {% endif %}
     </main>
 {% endblock %}

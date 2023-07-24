@@ -7,7 +7,7 @@
             <div class="form">
                 <h2>Add Vehicle</h2>
                 <form class="create-form" method="post" action="{% url 'create vehicle' %}">
-                    {{ form }}
+                    {{ form.as_p }}
                     <button type="submit">Add Vehicle</button>
                     {% csrf_token %}
                 </form>

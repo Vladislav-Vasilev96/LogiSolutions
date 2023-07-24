@@ -1,112 +1,67 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/* Form styles */
 
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-.form {
-  background-color: rgb(250, 190, 134);
-  max-width: 440px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-
-  padding: 45px;
-  text-align: center;
+.form-container {
+  max-width: 400px;
+  margin: 40px auto; /* Add some space from the top and center the form */
+  padding: 30px;
+  background-color: #f0f0f0; /* Set your desired background color */
   border-radius: 10px;
-  border: 1px solid;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center the content horizontally */
 }
 
-.form h2 {
-  margin-bottom: 50px;
-  font-size: 30px;
-  color: rgb(190, 103, 2);
+.form h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.form input{
-  border-radius: 10px;
-  outline: 0;
-  background: #f8f4b4;
-  width: 100%;
-  height: 50px;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.form textarea {
-  background: #f8f4b4;
-  border-radius: 10px;
-  border: 1px solid rgb(206, 206, 206);
-  width: 99%;
-  max-width: 99%;
-  min-width: 99%;
-  min-height: 50px;
-  margin-bottom: 10px;
-
-}
-.form button {
-  font-family: 'Alkalami', serif;
-  font-family: 'Kaushan Script', cursive;
-  text-transform: uppercase;
-  outline: 0;
-  background: rgb(214, 112, 16);
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 5px;
-  
-}
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #bd2c2c;
-}
-
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before,
-.container:after {
-  content: "";
+.form label {
   display: block;
-  clear: both;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
 }
 
-.form .message {
-  margin: 15px 0 0;
-  color: #6b6767;
-  font-size: 17px;
-}
-.form .message a {
-  color: #bd2c2c;
-  text-decoration: none;
-}
-
-#search .form h2{
-margin-top:-40px;
-margin-bottom: 0px;
-  font-size: 30px;
-  color: rgb(190, 103, 2);
-}
-.search-result > .fruit {
-  scale: 0.5;
-}
-.search-result {
-  margin-top: -50px;
-  display: flex;
+.form input[type="text"],
+.form textarea,
+.form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 
-.no-result {
-  margin-top: 8rem;
-  font-size: 30px;
+.form textarea {
+  resize: vertical;
+}
+
+.form button {
+  background-color: #5cb85c; /* Light Green */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  display: block; /* Add this to make the button appear on a new line */
+  width: 100%; /* Add this to make the button full width */
+  margin-top: 20px; /* Add some space between the fields and the button */
+}
+
+.form button:hover {
+  background-color: #4cae4c; /* Darker Green on hover */
+}
+
+/* Additional styles for form errors */
+.form .error-message {
+  color: #d9534f; /* Red */
+  margin-bottom: 10px;
+}
+
+.form .error-message p {
+  margin: 5px 0;
 }

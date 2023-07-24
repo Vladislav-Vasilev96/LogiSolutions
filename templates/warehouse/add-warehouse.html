@@ -7,7 +7,7 @@
             <div class="form">
                 <h2>Add Warehouse</h2>
                 <form class="create-form" method="post" action="{% url 'create warehouse' %}">
-                    {{ form }}
+                    {{ form.as_p }}
                     <button type="submit">Add Warehouse</button>
                     {% csrf_token %}
                 </form>

@@ -1,8 +1,9 @@
-from django.urls import reverse_lazy
+from django.shortcuts import redirect
+from django.urls import reverse_lazy, reverse
 from django.views import generic as generic_views
 
 from LogiSolutions.cargo.forms import CargoForm
-
+from LogiSolutions.cargo.models import Cargo
 
 
 class CreateCargoView(generic_views.CreateView):
@@ -18,8 +19,38 @@ class CreateCargoView(generic_views.CreateView):
 
 class EditCargoView(generic_views.UpdateView):
     template_name = 'cargo/edit-cargo.html'
+    form_class = CargoForm
+    model = Cargo
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.object.owner
+        cargo = Cargo.objects.get(pk=user.id)
+        context['cargo'] = cargo
+        return context
+
+    def get_success_url(self):
+        pk = self.object.pk
+        return reverse('details cargo', kwargs={'pk': pk})
+
 
 class DetailsCargoView(generic_views.DetailView):
     template_name = 'cargo/details-cargo.html'
+    model = Cargo
+    form_class = CargoForm
+
+
 class DeleteCargoView(generic_views.DeleteView):
     template_name = 'cargo/delete-cargo.html'
+    model = Cargo
+    success_url = reverse_lazy('IndexView')
+
+    def get_success_url(self):
+        if 'next' in self.request.POST:
+            return self.request.POST['next']
+        return self.success_url
+
+    def delete(self, request, *args, **kwargs):
+        self.object.delete()
+        return redirect(self.get_success_url())
+

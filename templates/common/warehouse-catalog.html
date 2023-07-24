@@ -1,0 +1,33 @@
+{% extends 'common/index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <h2>Fruits</h2>
+    <section id="dashboard">
+        {% if warehouses %}
+            {% for warehouse in warehouses %}
+                <!-- first fruit -->
+                <div class="fruit">
+                    <!-- fruit image -->
+                    <img src="{{ warehouse.name }}" alt="example1"/>
+                    <!-- fruit name -->
+                    <h3 class="title">{{ warehouse.location }}</h3>
+                    <!-- fruit description -->
+                    <p class="description">{{ warehouse.contact_person }}.</p>
+                    <p class="description">{{ warehouse.square_meters_capacity }}.</p>
+                    <!-- fruit details button -->
+                    <a class="details-btn" href="{% url 'details warehouse' warehouse.pk  %}">More Info</a>
+                </div>
+            {% endfor %}
+        {% else %}
+
+
+            </section>
+
+            <!-- Display a heading if there are no posts -->
+            <h2>No warehouse yet.</h2>
+        {% endif %}
+
+{% endblock %}

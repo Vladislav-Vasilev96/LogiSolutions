@@ -9,7 +9,8 @@
     <title>LogiSolutions</title>
 
 </head>
-<body>
+
+<body style="background-image: url('{% static 'images/background.jpg' %}')">
 <div id="wrapper">
     <header>
         <!-- Navigation -->
@@ -22,14 +23,21 @@
             {% if user.is_authenticated %}
 
                 <div class="user">
-                    <a href="{% url 'CatalogView' %}">Catalogue</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Choices</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'CargoCatalogView' %}">Cargo Catalog</a>
+                            <a href="{% url 'VehicleCatalogView' %}">Vehicle Catalog</a>
+                            <a href="{% url 'WarehouseCatalog' %}">Warehouse Catalog</a>
+                        </div>
+                    </li>
                     <a href="#">About</a>
-                     {% if profile.type == 'Vehicle Owner' %}
-                    <a href="{% url 'create vehicle' %}">Add Vehicle</a>
-                         {% elif profile.type == 'Cargo Owner' %}
-                         <a href="{% url 'create cargo' %}">Add Cargo</a>
-                         {% elif profile.type == 'Warehouse Owner' %}
-                         <a href="{% url 'create warehouse' %}">Add Warehouse</a>
+                    {% if profile.type == 'Vehicle Owner' %}
+                        <a href="{% url 'create vehicle' %}">Add Vehicle</a>
+                    {% elif profile.type == 'Cargo Owner' %}
+                        <a href="{% url 'create cargo' %}">Add Cargo</a>
+                    {% elif profile.type == 'Warehouse Owner' %}
+                        <a href="{% url 'create warehouse' %}">Add Warehouse</a>
                     {% endif %}
                     <a href="{% url 'DetailsProfileView' pk=user.pk %}">Profile</a>
                     <a href="{% url 'LogoutConfirmationView' %}">Logout</a>
@@ -39,7 +47,7 @@
 
             {% else %}
                 <div class="guest">
-                    <a href="{% url 'CatalogView' %}">Catalogue</a>
+{#                    <a href="{% url 'CatalogView' %}">Catalogue</a>#}
                     <a href="{% url 'RegisterView' %}">SignIn</a>
                     <a href="{% url 'LoginView' %}">LogIn</a>
                 </div>
