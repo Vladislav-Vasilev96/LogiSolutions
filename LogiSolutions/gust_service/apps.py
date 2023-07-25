@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OffersConfig(AppConfig):
+class GustServiceConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'LogiSolutions.offers'
+    name = 'LogiSolutions.gust_service'
