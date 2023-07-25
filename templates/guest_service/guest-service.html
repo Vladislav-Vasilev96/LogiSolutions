@@ -1,0 +1,20 @@
+{% extends 'common/index.html' %}
+{% load static %}
+{% block content %}
+    <h1>Welcome to LogiSolutions </h1>
+
+    <p>Find Vehicle for Your Cargo</p>
+    <a href="{% url 'VehicleCatalogView' %}">Vehicle Catalog</a>
+    <p>Find Cargo for Your Vehicle</p>
+    <a href="{% url 'CargoCatalogView' %}">Cargo Catalog</a>
+
+    <p>Ask a Question</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="question">Question:</label>
+        <textarea id="question" name="question" rows="4" cols="50"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+
+{% endblock %}
