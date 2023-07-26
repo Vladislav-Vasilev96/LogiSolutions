@@ -7,11 +7,12 @@ from LogiSolutions.warehouse.models import Warehouse
 
 
 class IndexView(generic_views.TemplateView):
-    template_name = 'common/index.html'
+    template_name = 'common/home.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
+
 
         # try:
         #     profile = Profile.objects.get(user=user.pk)

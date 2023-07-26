@@ -3,33 +3,25 @@
 
 
 
-{% block content %}
-    <h2>Vehicles</h2>
-    <section id="dashboard">
-        {% if vehicles %}
-            {% for vehicle in vehicles %}
-                <!-- first fruit -->
-                <div class="fruit">
-                    <!-- fruit image -->
-                    <img src="{{ vehicle.license_plate }}" alt="example1"/>
-                    <!-- fruit name -->
-                    <h3 class="title">{{ vehicle.current_location }}</h3>
-                    <!-- fruit description -->
-                    <p class="description">{{ vehicle.max_weight }}.</p>
-                    <p class="description">{{ vehicle.status }}.</p>
-                    <p class="description">{{ vehicle.vehicle_type }}.</p>
-                    <p class="description">{{ vehicle.description }}.</p>
-                    <!-- fruit details button -->
-                    <a class="details-btn" href="{% url 'details vehicle' vehicle.pk  %}">More Info</a>
-                </div>
-            {% endfor %}
-        {% else %}
-
-
-            </section>
-
-            <!-- Display a heading if there are no posts -->
-            <h2>No vehicles yet.</h2>
-        {% endif %}
-
-{% endblock %}
+ {% block content %}
+        <h2>Vehicles</h2>
+        <section id="dashboard">
+            {% if vehicles %}
+                {% for vehicle in vehicles %}
+                    <div class="card">
+                        <img src="{{ vehicle.vehicle_image }}" alt="example1"/>
+                        <h3 class="title">{{ vehicle.current_location }}</h3>
+                        <p class="description">Max weight:{{ vehicle.max_weight }} tons.</p>
+                        <p class="description">Status: {{ vehicle.status }}.</p>
+                        <p class="description">Type: {{ vehicle.vehicle_type }}.</p>
+                        <p class="description">Contact Number: {{ vehicle.contact_number }}.</p>
+                        <p class="description">Description:{{ vehicle.description }}.</p>
+                        <a class="details-btn" href="{% url 'details vehicle' vehicle.pk  %}">More Info</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <!-- Display a heading if there are no posts -->
+                <h2>No vehicles yet.</h2>
+            {% endif %}
+        </section>
+    {% endblock %}

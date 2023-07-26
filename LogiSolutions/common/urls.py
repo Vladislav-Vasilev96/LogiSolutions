@@ -7,6 +7,6 @@ urlpatterns = (
     path('catalog/', include([
         path('cargo/', CargoCatalog.as_view(), name='CargoCatalogView'),
         path('vehicle/', VehicleCatalog.as_view(), name='VehicleCatalogView'),
-        path('warehouse/', WarehouseCatalog.as_view(), name='WarehouseCatalog'),
+        path('warehouse/', WarehouseCatalog.as_view(), name='WarehouseCatalogView'),
     ]))
 )
