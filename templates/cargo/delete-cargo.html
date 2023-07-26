@@ -2,13 +2,14 @@
 {% load static %}
 {% block content %}
 
-        <section id="edit">
+        <section id="delete">
 
                 <div class="form">
-                    <h2>Delete Cargo</h2>
+                    <h2>Are you sure you want to delete this cargo ?</h2>
                     <form class="edit-form" method="POST">
                         {{ form }}
                         <button type="submit">Delete</button>
+                        <button onclick="goBack()">Cancel</button>
                         {% csrf_token %}
                     </form>
                 </div>

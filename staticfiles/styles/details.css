@@ -1,69 +1,161 @@
+/* Add some basic styles for the profile details container */
+.profile-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  backdrop-filter: blur(5px); /* Apply the blur effect to the profile background */
+    -webkit-backdrop-filter: blur(5px); /* For Safari support */
+}
+
+/* Apply card styles to the profile details section */
 #details-wrapper {
-  background-color: rgb(248, 238, 177);
-  margin: 50px auto;
-  height: 75%;
-  width: 80%;
- border-radius: 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+    width: 350px; /* Adjust the width as per your preference */
+    background-color: rgba(255, 255, 255, 0.7); /* Add an overlay to improve text readability */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
 }
 
+/* Style the profile image within the card */
 #details-wrapper img {
-  display: block;
-  margin: 10px auto;
-  height: 30vh;
-  width: 30vh;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
+/* Center the title within the card */
 #details-title {
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
 }
 
-#details-description {
-  width: 95%;
-  margin: 30px auto;
-  height: auto;
-  text-align: center;
-}
-#details-title {
-  font-size: 22px;
+/* Style the description paragraphs within the card */
+#details-description p {
+    margin: 5px 0;
 }
 
-h4 {
-  text-align: center;
-}
-
-p {
-  text-align: center;
-  font-size: 14px;
-}
-
-span {
-  font-size: 22px;
-}
-
+/* Style the action buttons within the card */
 #action-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
-  
+    display: flex;
+    justify-content: center;
 }
 
 #action-buttons a {
-  text-decoration: none;
-  margin: auto 50px;
+    display: block;
+    text-align: center;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.guest-service {
+  background-color: #f7f7f7;
+  padding: 40px 0;
+}
+
+.guest-content {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.guest-content h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.guest-content p {
+  font-size: 18px;
   margin-bottom: 10px;
-  font-size: 21px;
-  width: 130px;
-  text-align: center;
-  color: white;
-  background: rgb(214, 112, 16);
+}
+
+.guest-content .btn {
+  display: inline-block;
+  background-color: #3e7ab3;
+  color: #fff;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.guest-content .btn:hover {
+  background-color: #4caf50;
+}
+
+.guest-content form {
+  margin-top: 30px;
+}
+
+.guest-content label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.guest-content textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
-#action-buttons a:hover {
-  background: #bd2c2c;
+.find-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
-#nutrition {
-  font-size: 22px;
+
+.btn-container {
+  margin: 0 10px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-large {
+  font-size: 20px;
+  padding: 15px 30px;
+}
+
+.question-section {
+  margin-top: 20px;
+}
+
+.question-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.question-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: vertical;
+}
+
+.question-form button {
+  margin-top: 10px;
 }
