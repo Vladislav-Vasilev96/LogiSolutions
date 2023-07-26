@@ -7,6 +7,7 @@ from LogiSolutions.core.model_mixins import TypesOfTruck, WEIGHT_CHOICES, Vehicl
 class Vehicle(models.Model):
     LICENSE_PLATE_MAX_LENGHT = 20
     CURRENT_LOCATION_MAX_LENGHT = 150
+    CONTACT_NUMBER_MAX_LENGTH=12
 
     license_plate = models.CharField(
         max_length=LICENSE_PLATE_MAX_LENGHT
@@ -36,12 +37,23 @@ class Vehicle(models.Model):
         null=True,
         blank=True,
     )
+    vehicle_image= models.ImageField(
+        null=True,
+        blank=True,
+        upload_to='vehicle_images'
+
+    )
+    contact_number = models.CharField(
+        null=False,
+        blank=False,
+        max_length=CONTACT_NUMBER_MAX_LENGTH,
+        default='359'
+    )
 
     owner = models.OneToOneField(
         CustomUser,
         on_delete=models.CASCADE,
         primary_key=True,
     )
-
     def __str__(self):
         return self.license_plate

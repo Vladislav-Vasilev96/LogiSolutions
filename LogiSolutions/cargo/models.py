@@ -5,10 +5,10 @@ from LogiSolutions.core.model_mixins import WEIGHT_CHOICES, CargoStatus
 
 
 class Cargo(models.Model):
-    DESTINATION_MAX_LENGTH = 200
+    MAX_LENGTH = 200
     NAME_MAX_LENGTH = 100
     CARGO_TYPE_MAX_LENGTH = 100
-
+    CONTACT_NUMBER_MAX_LENGTH=12
     name = models.CharField(
         max_length=NAME_MAX_LENGTH
     )
@@ -16,17 +16,31 @@ class Cargo(models.Model):
     location = models.CharField(
         null=False,
         blank=False,
+        max_length=MAX_LENGTH
+    )
+    cargo_image = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to='cargo_images/'
+
+    )
+    contact_number = models.CharField(
+        null=False,
+        blank=False,
+        max_length=CONTACT_NUMBER_MAX_LENGTH,
+        default='359'
     )
 
     start_location = models.CharField(
         null=False,
         blank=False,
+        max_length=MAX_LENGTH
     )
 
     destination = models.CharField(
         null=False,
         blank=False,
-        max_length=DESTINATION_MAX_LENGTH
+        max_length=MAX_LENGTH
     )
 
     total_km = models.IntegerField(
@@ -64,9 +78,8 @@ class Cargo(models.Model):
         blank=True,
     )
 
-    owner = models.OneToOneField(
+    owner = models.ForeignKey(
         CustomUser,
-        on_delete=models.CASCADE,
-        primary_key=True,
+        on_delete=models.CASCADE
     )
 
