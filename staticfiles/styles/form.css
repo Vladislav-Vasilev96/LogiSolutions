@@ -1,13 +1,12 @@
-/* Form styles */
 
 .form-container {
   max-width: 400px;
-  margin: 40px auto; /* Add some space from the top and center the form */
+  margin: 40px auto;
   padding: 30px;
-  background-color: #f0f0f0; /* Set your desired background color */
+  background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  text-align: center; /* Center the content horizontally */
+  text-align: center;
 }
 
 .form h1 {
@@ -39,7 +38,7 @@
 }
 
 .form button {
-  background-color: #5cb85c; /* Light Green */
+  background-color: #5cb85c;
   color: #fff;
   padding: 12px 20px;
   border: none;
@@ -47,21 +46,52 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  display: block; /* Add this to make the button appear on a new line */
-  width: 100%; /* Add this to make the button full width */
-  margin-top: 20px; /* Add some space between the fields and the button */
+  display: block;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .form button:hover {
-  background-color: #4cae4c; /* Darker Green on hover */
+  background-color: #4cae4c;
 }
 
-/* Additional styles for form errors */
+
 .form .error-message {
-  color: #d9534f; /* Red */
+  color: #d9534f;
   margin-bottom: 10px;
 }
 
 .form .error-message p {
   margin: 5px 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content:space-around;
+  margin-top: 20px;
+}
+
+.image-container img {
+  width: 250px; /* Set the width of the images */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.image-container a {
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Add hover effects to visualize the images as buttons */
+.image-container img:hover {
+  transform: scale(1.1);
+}
+
+.image-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
 }

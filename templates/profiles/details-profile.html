@@ -1,8 +1,9 @@
 {% extends 'common/index.html' %}
 {% load static %}
+
 {% block content %}
 
-    <main>
+    <main class="profile-main"> <!-- Add a class for the profile details container -->
 
         <!-- Profile Details Section -->
 
@@ -10,7 +11,7 @@
             <div id="details-wrapper">
                 <h2>Profile Details</h2>
                 {% if profile.profile_image %}
-                <img  src="{{  profile.profile_image }}" alt="" width="200" height="200" />
+                <img src="{{ profile.profile_image }}" alt="" width="200" height="200" />
                 {% else %}
                 <!-- if the user has NO profile image -->
                 <img id="details-img" src="{% static 'images/default.png' %}" alt="profile img"/>

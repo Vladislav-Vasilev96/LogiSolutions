@@ -1,0 +1,24 @@
+{% extends 'common/index.html' %}
+{% load static %}
+{% block content %}
+    <h2>Welcome to LogiSolutions</h2>
+    <p>
+        Unlock the power of user-driven logistics! LogiSolutions connects cargo owners, vehicle providers,
+        and warehouse operators in one unified platform, revolutionizing the way logistics is managed. Embrace
+        the simplicity of finding the perfect match for your logistics needs.
+    </p>
+    <div class="image-container">
+        <a href="{% url 'CargoCatalogView' %}">
+            <img src="{% static 'images/cargo.jpeg' %}" alt="Cargo Image">
+            <span class="image-text">Cargo</span>
+        </a>
+        <a href="{% url 'VehicleCatalogView' %}">
+            <img src="{% static 'images/vehicle.jpg' %}" alt="Vehicle Image">
+            <span class="image-text">Vehicle</span>
+        </a>
+        <a href="{% url 'WarehouseCatalogView' %}">
+            <img src="{% static 'images/Warehouse.jpg' %}" alt="Warehouse Image">
+            <span class="image-text">Warehouse</span>
+        </a>
+    </div>
+{% endblock %}

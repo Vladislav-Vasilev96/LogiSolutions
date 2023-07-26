@@ -1,20 +1,39 @@
 {% extends 'common/index.html' %}
 {% load static %}
 {% block content %}
-    <h1>Welcome to LogiSolutions </h1>
+    <section class="guest-service pale-background">
+        <div class="guest-content">
+            <h2>Welcome to LogiSolutions</h2>
+            <section class="more-info" id="more-info">
+                <div class="guest-content">
+                    <p>
+                        LogiSolutions is your ultimate logistics partner. Our platform connects cargo owners, vehicle providers,
+                        and warehouse operators, making logistics management a breeze. From efficient cargo and vehicle cataloging
+                        to real-time tracking and user-friendly interfaces, we've got it all covered.
+                    </p>
+                </div>
+            </section>
 
-    <p>Find Vehicle for Your Cargo</p>
-    <a href="{% url 'VehicleCatalogView' %}">Vehicle Catalog</a>
-    <p>Find Cargo for Your Vehicle</p>
-    <a href="{% url 'CargoCatalogView' %}">Cargo Catalog</a>
+            <div class="find-buttons">
+                <div class="btn-container">
+                    <a href="{% url 'VehicleCatalogView' %}" class="btn btn-large">Find Vehicle for Your Cargo</a>
+                </div>
+                <div class="btn-container">
+                    <a href="{% url 'CargoCatalogView' %}" class="btn btn-large">Find Cargo for Your Vehicle</a>
+                </div>
+            </div>
 
-    <p>Ask a Question</p>
-    <form action="" method="post">
-        {% csrf_token %}
-        <label for="question">Question:</label>
-        <textarea id="question" name="question" rows="4" cols="50"></textarea>
-        <button type="submit">Submit</button>
-    </form>
-
-
+            <section class="question-section">
+                <div class="guest-content">
+                    <h2>Ask a Question</h2>
+                    <form action="" method="post" class="question-form">
+                        {% csrf_token %}
+                        <label for="question">Question:</label>
+                        <textarea id="question" name="question" rows="4" cols="50" placeholder="Type your question here..."></textarea>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </section>
 {% endblock %}

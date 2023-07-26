@@ -15,14 +15,14 @@ class RegisterUserForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ('email',)
+        fields = ['email',]
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.email = self.cleaned_data['email']
         if commit:
             user.save()
-            profile = Profile.objects.create(profile=user, email=user.email)
+            profile = Profile.objects.create(user=user, email=user.email)
             profile.save()
         return user
 
