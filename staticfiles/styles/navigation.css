@@ -20,7 +20,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #3e7ab4; /* Light Blue */
+  background-color: #3e7ab4;
   padding: 10px 20px;
   color: #fff;
 }
@@ -46,7 +46,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #50c878; /* Light Green */
+  background-color: #50c878;
 }
 
 .main-content {
@@ -55,12 +55,11 @@ nav a:hover {
 
 footer {
   text-align: center;
-  background-color: #3e7ab4; /* Light Blue */
+  background-color: #3e7ab4;
   color: #fff;
   padding: 10px;
 }
 
-/* Styles for authenticated user */
 .user a.dropbtn {
   cursor: pointer;
 }
@@ -93,7 +92,7 @@ footer {
   display: block;
 }
 
-/* Styles for guest user */
+
 .guest a {
   color: #fff;
   text-decoration: none;
@@ -101,6 +100,6 @@ footer {
 }
 
 .guest a:hover {
-  background-color: #50c878; /* Light Green */
+  background-color: #50c878;
 }
 

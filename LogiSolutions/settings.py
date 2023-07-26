@@ -23,10 +23,10 @@ THIRD_PARTY_APPS = (
 LOGI_SOLUTIONS_APPS = (
     'LogiSolutions.accounts',
     'LogiSolutions.common',
-    'LogiSolutions.photos',
     'LogiSolutions.cargo',
     'LogiSolutions.vehicle',
     'LogiSolutions.warehouse',
+    'LogiSolutions.guest_service',
 )
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOGI_SOLUTIONS_APPS
 
@@ -102,7 +102,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = 'media/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = (BASE_DIR / 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
