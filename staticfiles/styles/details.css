@@ -1,16 +1,16 @@
-/* Add some basic styles for the profile details container */
+
 .profile-main {
     display: flex;
     justify-content: center;
     align-items: center;
-  backdrop-filter: blur(5px); /* Apply the blur effect to the profile background */
-    -webkit-backdrop-filter: blur(5px); /* For Safari support */
+  backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-/* Apply card styles to the profile details section */
+
 #details-wrapper {
-    width: 350px; /* Adjust the width as per your preference */
-    background-color: rgba(255, 255, 255, 0.7); /* Add an overlay to improve text readability */
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
@@ -18,7 +18,7 @@
     text-align: center;
 }
 
-/* Style the profile image within the card */
+
 #details-wrapper img {
     width: 200px;
     height: 200px;
@@ -26,18 +26,18 @@
     margin-bottom: 10px;
 }
 
-/* Center the title within the card */
+
 #details-title {
     text-align: center;
     margin: 10px 0;
 }
 
-/* Style the description paragraphs within the card */
+
 #details-description p {
     margin: 5px 0;
 }
 
-/* Style the action buttons within the card */
+
 #action-buttons {
     display: flex;
     justify-content: center;
@@ -54,6 +54,7 @@
     margin: 5px;
 }
 
+
 .guest-service {
   background-color: #f7f7f7;
   padding: 40px 0;
@@ -61,101 +62,98 @@
 
 .guest-content {
   margin: 20px auto;
-  padding: 20px;
   max-width: 600px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.guest-content h1 {
-  font-size: 28px;
+.guest-content h2 {
+  font-size: 32px;
+  color: #3e7ab3;
   margin-bottom: 20px;
 }
 
 .guest-content p {
   font-size: 18px;
-  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
 }
 
-.guest-content .btn {
-  display: inline-block;
+.guest-content .btn-primary {
   background-color: #3e7ab3;
   color: #fff;
-  padding: 12px 30px;
-  margin: 10px;
-  border-radius: 5px;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  margin-right: 10px;
   transition: background-color 0.3s;
 }
 
-.guest-content .btn:hover {
+.guest-content .btn-primary:hover {
   background-color: #4caf50;
 }
 
-.guest-content form {
-  margin-top: 30px;
-}
-
-.guest-content label {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.guest-content textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 .find-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.btn-container {
-  margin: 0 10px;
+.find-buttons .btn-container {
+  margin: 10px;
 }
 
-.btn {
-  font-size: 18px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn-large {
-  font-size: 20px;
-  padding: 15px 30px;
-}
-
-.question-section {
-  margin-top: 20px;
+.question-form .form-group {
+  margin-bottom: 20px;
 }
 
 .question-form label {
-  display: block;
-  margin-bottom: 5px;
+  font-size: 18px;
+  color: #3e7ab3;
+  font-weight: bold;
+  margin-bottom: 30px;
+
 }
 
+.question-form .form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.question-form .form-group.col-md-6 {
+  flex: 0 0 48%;
+}
+
+.question-form input[type="text"],
+.question-form input[type="email"],
 .question-form textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
-  resize: vertical;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
 }
 
 .question-form button {
-  margin-top: 10px;
+  background-color: #3e7ab3;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px auto 0; /* Change 'auto auto 0' to '20px auto' to center the button horizontally */
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-form button:hover {
+  background-color: #4caf50;
 }

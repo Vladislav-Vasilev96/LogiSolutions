@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PaymentsConfig(AppConfig):
+class GustServiceConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'LogiSolutions.payments'
+    name = 'LogiSolutions.guest_service'

@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'LogiSolutions.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "logisolutions_db",
+        "NAME": "Logisolutions_db",
         "USER": "postgres",
         "PASSWORD": "mypassword",
         "HOST": "127.0.0.1",
@@ -100,9 +100,11 @@ STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
-MEDIA_ROOT = (BASE_DIR / 'media/')
+MEDIA_ROOT = (
+        BASE_DIR / 'media/'
+)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

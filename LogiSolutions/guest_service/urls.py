@@ -1,7 +1,7 @@
 from django.urls import path
 
-from LogiSolutions.guest_service.views import GuestUserView
+from LogiSolutions.guest_service.views import AskQuestionView
 
 urlpatterns = (
-    path('LogiSolutions/', GuestUserView.as_view(), name='GuestView'),
+    path('LogiSolutions/', AskQuestionView.as_view(), name='GuestView'),
 )

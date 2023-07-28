@@ -6,7 +6,7 @@ from LogiSolutions.accounts.models import CustomUser
 class Warehouse(models.Model):
     NAME_MAX_LENGTH = 100
     LOCATION_MAX_LENGTH = 200
-    CONTACT_PERSON_MAX_LENGTH = 12
+    CONTACT_PERSON_MAX_LENGTH = 13
 
     name = models.CharField(
         max_length=NAME_MAX_LENGTH
@@ -23,7 +23,7 @@ class Warehouse(models.Model):
         max_length=CONTACT_PERSON_MAX_LENGTH,
         null=False,
         blank=True,
-        default='359'
+        default='+359'
 
     )
     warehouse_image = models.ImageField(
@@ -33,11 +33,12 @@ class Warehouse(models.Model):
 
     )
 
-    owner = models.OneToOneField(
+    owner = models.ForeignKey(
         CustomUser,
-        on_delete=models.CASCADE,
-        primary_key=True,
+        on_delete=models.CASCADE
     )
+
+
 
     def __str__(self):
         return self.name

@@ -16,21 +16,32 @@
 
             <div class="find-buttons">
                 <div class="btn-container">
-                    <a href="{% url 'VehicleCatalogView' %}" class="btn btn-large">Find Vehicle for Your Cargo</a>
+                    <a href="{% url 'VehicleCatalogView' %}" class="btn btn-large btn-primary">Find Vehicle for Your Cargo</a>
                 </div>
                 <div class="btn-container">
-                    <a href="{% url 'CargoCatalogView' %}" class="btn btn-large">Find Cargo for Your Vehicle</a>
+                    <a href="{% url 'CargoCatalogView' %}" class="btn btn-large btn-primary">Find Cargo for Your Vehicle</a>
                 </div>
             </div>
-
             <section class="question-section">
                 <div class="guest-content">
                     <h2>Ask a Question</h2>
-                    <form action="" method="post" class="question-form">
+                    <form method="post" class="question-form">
                         {% csrf_token %}
-                        <label for="question">Question:</label>
-                        <textarea id="question" name="question" rows="4" cols="50" placeholder="Type your question here..."></textarea>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ form.phone.label_tag }}
+                                {{ form.phone }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form.question.label_tag }}
+                            {{ form.question }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Question</button>
                     </form>
                 </div>
             </section>

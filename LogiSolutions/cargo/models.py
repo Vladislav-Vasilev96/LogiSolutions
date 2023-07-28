@@ -8,7 +8,7 @@ class Cargo(models.Model):
     MAX_LENGTH = 200
     NAME_MAX_LENGTH = 100
     CARGO_TYPE_MAX_LENGTH = 100
-    CONTACT_NUMBER_MAX_LENGTH=12
+    CONTACT_NUMBER_MAX_LENGTH=13
     name = models.CharField(
         max_length=NAME_MAX_LENGTH
     )
@@ -28,7 +28,7 @@ class Cargo(models.Model):
         null=False,
         blank=False,
         max_length=CONTACT_NUMBER_MAX_LENGTH,
-        default='359'
+        default='+359'
     )
 
     start_location = models.CharField(
