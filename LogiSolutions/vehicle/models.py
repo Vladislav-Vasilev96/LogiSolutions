@@ -1,7 +1,7 @@
 from django.db import models
 
 from LogiSolutions.accounts.models import CustomUser
-from LogiSolutions.core.model_mixins import TypesOfTruck, WEIGHT_CHOICES, VehicleStatus
+from LogiSolutions.core.model_mixins import TypesOfTruck, WEIGHT_CHOICES
 
 
 class Vehicle(models.Model):
@@ -28,10 +28,6 @@ class Vehicle(models.Model):
         blank=True,
     )
 
-    status = models.CharField(
-        max_length=VehicleStatus.max_length(),
-        choices=VehicleStatus.choices(),
-    )
 
     description = models.TextField(
         null=True,

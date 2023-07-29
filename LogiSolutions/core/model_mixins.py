@@ -20,21 +20,6 @@ class Gender(ChoicesStringsMixin, ChoicesMixin, Enum):
     DO_NOT_SHOW = 'do not show'
 
 
-class VehicleStatus(ChoicesStringsMixin, ChoicesMixin, Enum):
-    DELIVERED = 'delivered'
-    AWAITING_DELIVERY = 'waiting for delivery'
-    WAITING_FOR_LOAD = 'waiting for load'
-    ON_BREAK = 'on a break'
-    IN_PROCESS = 'in process'
-
-
-class CargoStatus(ChoicesStringsMixin, ChoicesMixin, Enum):
-    PENDING = 'Pending'
-    IN_TRANSIT = 'In Transit'
-    DELIVERED = 'Delivered'
-    TO_STORAGE = 'To storage '
-    LOST = 'Lost'
-    CANCELLED = 'Cancelled'
 
 
 class WEIGHT_CHOICES(ChoicesStringsMixin, ChoicesMixin, Enum):
@@ -53,10 +38,6 @@ class TypesOfTruck(ChoicesStringsMixin, ChoicesMixin, Enum):
     MAIL_TRUCK = 'Mail truck'
 
 
-class PaymentsStatus(ChoicesStringsMixin, ChoicesMixin, Enum):
-    PAID = 'Paid'
-    PENDING = 'Pending'
-    OVERDUE = 'Overdue'
 
 
 class ProfileType(ChoicesStringsMixin, ChoicesMixin, Enum):

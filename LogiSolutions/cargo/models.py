@@ -1,7 +1,7 @@
 from django.db import models
 
 from LogiSolutions.accounts.models import CustomUser
-from LogiSolutions.core.model_mixins import WEIGHT_CHOICES, CargoStatus
+from LogiSolutions.core.model_mixins import WEIGHT_CHOICES
 
 
 class Cargo(models.Model):
@@ -68,10 +68,6 @@ class Cargo(models.Model):
 
     )
 
-    status = models.CharField(
-        choices=CargoStatus.choices(),
-        max_length=CargoStatus.max_length(),
-    )
 
     description = models.TextField(
         null=True,
