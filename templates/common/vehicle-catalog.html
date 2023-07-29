@@ -9,7 +9,8 @@
             {% if vehicles %}
                 {% for vehicle in vehicles %}
                     <div class="card">
-                        <img src="{{ vehicle.vehicle_image }}" alt="example1"/>
+
+                        <img src="{{ vehicle.vehicle_image.url }}" class="card-img-top" alt="Vehicle Image">
                         <h3 class="title">{{ vehicle.current_location }}</h3>
                         <p class="description">Max weight:{{ vehicle.max_weight }} tons.</p>
                         <p class="description">Status: {{ vehicle.status }}.</p>

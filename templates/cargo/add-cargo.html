@@ -6,7 +6,7 @@
         <section id="create">
             <div class="form">
                 <h2>Add Cargo</h2>
-                <form class="create-form" method="post" action="{% url 'create cargo' %}">
+                <form class="create-form" method="post" action="{% url 'create cargo' %}"  enctype="multipart/form-data">
                     {{ form }}
                     <button type="submit">Add Cargo</button>
                     {% csrf_token %}

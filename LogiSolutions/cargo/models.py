@@ -31,11 +31,6 @@ class Cargo(models.Model):
         default='+359'
     )
 
-    start_location = models.CharField(
-        null=False,
-        blank=False,
-        max_length=MAX_LENGTH
-    )
 
     destination = models.CharField(
         null=False,

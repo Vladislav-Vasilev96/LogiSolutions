@@ -65,51 +65,21 @@
   margin: 5px 0;
 }
 
-.image-container {
-  display: flex;
-  justify-content:space-around;
-  margin-top: 20px;
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+  .details-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.image-container img {
-  width: 250px; /* Set the width of the images */
+.square-image {
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
   height: auto;
-  cursor: pointer;
-  transition: transform 0.3s;
+  object-fit: contain;
 }
-
-.image-container a {
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-}
-
-
-.image-container img:hover {
-  transform: scale(1.1);
-}
-
-.image-text {
-  display: block;
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/*@media (max-width: 600px) {*/
-/*  .pet-card {*/
-/*    width: 100%;*/
-/*  }*/
-/*  .details-buttons {*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*  }*/
-/*}*/
-
-/*.square-image {*/
-/*  max-width: 400px;*/
-/*  max-height: 400px;*/
-/*  width: auto;*/
-/*  height: auto;*/
-/*  object-fit: contain;*/
-/*}*/

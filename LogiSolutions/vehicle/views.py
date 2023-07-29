@@ -24,9 +24,8 @@ class EditVehicleView(generic_views.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        user = self.object.owner
-        cargo = Vehicle.objects.get(pk=user.id)
-        context['cargo'] = cargo
+        vehicle = self.get_object()
+        context['vehicle'] = vehicle
         return context
 
     def get_success_url(self):

@@ -16,7 +16,44 @@ class CargoForm(forms.ModelForm):
         model = Cargo
         fields = '__all__'
         exclude = ('owner',)
+        labels = {
+            'destination': 'Final Destination',
+            'total_km': 'Total Kilometers',
+        }
+
         widgets = {
             'departure_date': DateInput,
-            'arrival_date': DateInput
+            'arrival_date': DateInput,
+            'name': forms.TextInput(
+                attrs={
+                    'placeholder': 'Item type'
+                }
+            ),
+
+            'location': forms.TextInput(
+                attrs={
+                    'placeholder': 'Town, Country',
+                }
+            ),
+            'total_km': forms.TextInput(
+                attrs={
+                    'placeholder': 'Kilometers',
+                }
+            ),
+            'destination': forms.TextInput(
+                attrs={
+                    'placeholder': 'Final Destination'
+                }
+            ),
+            'cargo_type': forms.TextInput(
+                attrs={
+                    'placeholder': 'Package type'
+                }
+            ),
+            'description': forms.Textarea(
+                attrs={
+                    'placeholder': 'Add Additional Information Here..'
+                }
+            )
+
         }

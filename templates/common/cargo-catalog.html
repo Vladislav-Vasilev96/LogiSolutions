@@ -10,7 +10,7 @@
         {% if cargos %}
             {% for cargo in cargos %}
                 <div class="card">
-                <img src="{{ MEDIA_URL }}{{ cargo.cargo_image }}" alt="Cargo Image">
+                <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
                     <h3 class="title">{{ cargo.location }}</h3>
                     <p class="description">Date Of Departure: {{ cargo.departure_date }}.</p>
                     <p class="description">Date Of Arrival: {{ cargo.arrival_date }}.</p>

@@ -22,10 +22,10 @@ class EditCargoView(generic_views.UpdateView):
     form_class = CargoForm
     model = Cargo
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        user = self.object.owner
-        cargo = Cargo.objects.get(pk=user.id)
+        cargo = self.get_object()
         context['cargo'] = cargo
         return context
 
