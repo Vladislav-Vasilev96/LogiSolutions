@@ -2,15 +2,14 @@
 {% load static %}
 {% block content %}
 
-           <section id="edit">
-            <div class="form">
-                <h2>Edit Warehouse</h2>
-                <form class="edit-form" method='POST', action="{% url 'edit warehouse' warehouse.pk %}">
-
-                    {{ form }}
-                    <button type="submit">Edit</button>
-                    {% csrf_token %}
-                </form>
-            </div>
-        </section>
+<section id="edit">
+    <div class="form">
+        <h2>Edit Warehouse</h2>
+        <form class="edit-form" method='POST' enctype="multipart/form-data" action="{% url 'edit warehouse' warehouse.pk %}">
+            {{ form.as_p }}
+            <button type="submit">Edit</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</section>
 {% endblock %}

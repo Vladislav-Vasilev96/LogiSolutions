@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from LogiSolutions.guest_service.models import GuestServiceFormSubmission
+
+
+@admin.register(GuestServiceFormSubmission)
+class GuestServiceFormSubmissionAdmin(admin.ModelAdmin):
+    pass
