@@ -73,8 +73,9 @@ class DetailUserView(generic_views.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        user = self.object.user
-        profile = Profile.objects.get(pk=user.id)
+        profile = self.object
+        user = profile.user
+
         context['profile'] = profile
         context['user'] = user
         context['template_name'] = self.TEMPLATE_NAME

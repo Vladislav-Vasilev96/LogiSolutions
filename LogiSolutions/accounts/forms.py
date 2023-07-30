@@ -20,7 +20,8 @@ class RegisterUserForm(UserCreationForm):
     password2 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                'type': 'password2'
+                'type': 'password',
+                'placeholder': 'Repeat password'
             }
         ),
         label='Repeat password:')
@@ -28,14 +29,13 @@ class RegisterUserForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ['email', ]
-        widgets ={
-            'email':forms.TextInput(
+        widgets = {
+            'email': forms.TextInput(
                 attrs={
                     'placeholder': 'Email'
                 }
             ),
         }
-
 
     def save(self, commit=True):
         user = super().save(commit=False)
