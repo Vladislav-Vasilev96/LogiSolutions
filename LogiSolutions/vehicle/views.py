@@ -38,6 +38,12 @@ class DetailsVehicleView(generic_views.DetailView):
     model = Vehicle
     form_class = VehicleForm
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(is_approved=True)
+        return queryset
+
 
 class DeleteVehicleView(generic_views.DeleteView):
     template_name = 'vehicle/delete-vehicle.html'
@@ -52,3 +58,10 @@ class DeleteVehicleView(generic_views.DeleteView):
     def delete(self, request, *args, **kwargs):
         self.object.delete()
         return redirect(self.get_success_url())
+
+
+def approve_vehicle(request, pk):
+    vehicle = Vehicle.objects.get(pk=pk)
+    vehicle.is_approved = True
+    vehicle.save()
+    return redirect('admin:vehicle_vehicle_changelist')

@@ -1,15 +1,13 @@
 {% extends 'common/index.html' %}
 {% load static %}
 
-
-
  {% block content %}
         <h2>Vehicles</h2>
         <section id="dashboard">
             {% if vehicles %}
                 {% for vehicle in vehicles %}
+                    {% if vehicle.is_approved %}
                     <div class="card">
-
                         <img src="{{ vehicle.vehicle_image.url }}" class="card-img-top" alt="Vehicle Image">
                         <h3 class="title">{{ vehicle.current_location }}</h3>
                         <p class="description">Max weight:{{ vehicle.max_weight }} tons.</p>
@@ -19,9 +17,9 @@
                         <p class="description">Description:{{ vehicle.description }}.</p>
                         <a class="details-btn" href="{% url 'details vehicle' vehicle.pk  %}">More Info</a>
                     </div>
+                    {% endif %}
                 {% endfor %}
             {% else %}
-                <!-- Display a heading if there are no posts -->
                 <h2>No vehicles yet.</h2>
             {% endif %}
         </section>

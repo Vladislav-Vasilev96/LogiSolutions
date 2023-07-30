@@ -23,7 +23,6 @@ class EditCargoView(generic_views.UpdateView):
     form_class = CargoForm
     model = Cargo
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         cargo = self.get_object()
@@ -42,9 +41,10 @@ class DetailsCargoView(generic_views.DetailView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        if not self.request.user.is_staff:  # If the user is not an admin, filter by is_approved=True
+        if not self.request.user.is_staff:
             queryset = queryset.filter(is_approved=True)
         return queryset
+
 
 class DeleteCargoView(generic_views.DeleteView):
     template_name = 'cargo/delete-cargo.html'

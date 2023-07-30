@@ -9,5 +9,5 @@ urlpatterns = [
         path('edit/', EditCargoView.as_view(), name='edit cargo'),
         path('delete/', DeleteCargoView.as_view(), name='delete cargo'),
     ])),
-    path('cargo/<int:pk>/approve/', views.approve_cargo, name='approve cargo'),  # Add this line
+    path('cargo/<int:pk>/approve/', views.approve_cargo, name='approve cargo'),
 ]

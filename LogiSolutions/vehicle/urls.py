@@ -1,5 +1,6 @@
 from django.urls import path, include
 
+from LogiSolutions.vehicle import views
 from LogiSolutions.vehicle.views import CreateVehicleView, DetailsVehicleView, DeleteVehicleView, EditVehicleView
 
 urlpatterns = (
@@ -8,5 +9,6 @@ urlpatterns = (
         path('details/', DetailsVehicleView.as_view(), name='details vehicle'),
         path('edit/', EditVehicleView.as_view(), name='edit vehicle'),
         path('delete/', DeleteVehicleView.as_view(), name='delete vehicle')
-    ]))
+    ])),
+    path('vehicle/<int:pk>/approve/', views.approve_vehicle, name='approve vehicle'),
 )

@@ -45,11 +45,15 @@ class Vehicle(models.Model):
         max_length=CONTACT_NUMBER_MAX_LENGTH,
         default='+359'
     )
+    is_approved = models.BooleanField(
+        default=False
+    )
 
     owner = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE
     )
+
 
     def __str__(self):
         return self.license_plate
