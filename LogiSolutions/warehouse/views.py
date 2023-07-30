@@ -31,13 +31,19 @@ class EditWarehouseView(generic_views.UpdateView):
 
     def get_success_url(self):
         pk = self.object.pk
-        return reverse('details vehicle', kwargs={'pk': pk})
+        return reverse('details warehouse', kwargs={'pk': pk})
 
 
 class DetailsWarehouseView(generic_views.DetailView):
     template_name = 'warehouse/details-warehouse.html'
     model = Warehouse
     form_class = WarehouseForm
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(is_approved=True)
+        return queryset
 
 
 class DeleteWarehouseView(generic_views.DeleteView):
@@ -53,3 +59,9 @@ class DeleteWarehouseView(generic_views.DeleteView):
     def delete(self, request, *args, **kwargs):
         self.object.delete()
         return redirect(self.get_success_url())
+
+def approve_warehouse(request, pk):
+    warehouse = Warehouse.objects.get(pk=pk)
+    warehouse.is_approved = True
+    warehouse.save()
+    return redirect('admin:warehouse_warehouse_changelist')

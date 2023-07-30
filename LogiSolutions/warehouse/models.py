@@ -32,6 +32,9 @@ class Warehouse(models.Model):
         upload_to='warehouse_images/'
 
     )
+    is_approved = models.BooleanField(
+        default=False
+    )
 
     owner = models.ForeignKey(
         CustomUser,
