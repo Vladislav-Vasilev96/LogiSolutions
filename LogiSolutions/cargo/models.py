@@ -30,6 +30,9 @@ class Cargo(models.Model):
         max_length=CONTACT_NUMBER_MAX_LENGTH,
         default='+359'
     )
+    is_approved = models.BooleanField(
+        default=False
+    )
 
 
     destination = models.CharField(

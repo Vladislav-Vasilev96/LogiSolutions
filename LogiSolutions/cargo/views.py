@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views import generic as generic_views
@@ -39,6 +40,11 @@ class DetailsCargoView(generic_views.DetailView):
     model = Cargo
     form_class = CargoForm
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if not self.request.user.is_staff:  # If the user is not an admin, filter by is_approved=True
+            queryset = queryset.filter(is_approved=True)
+        return queryset
 
 class DeleteCargoView(generic_views.DeleteView):
     template_name = 'cargo/delete-cargo.html'
@@ -54,3 +60,9 @@ class DeleteCargoView(generic_views.DeleteView):
         self.object.delete()
         return redirect(self.get_success_url())
 
+
+def approve_cargo(request, pk):
+    cargo = Cargo.objects.get(pk=pk)
+    cargo.is_approved = True
+    cargo.save()
+    return redirect('admin:cargo_cargo_changelist')

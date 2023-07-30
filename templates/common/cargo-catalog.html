@@ -1,30 +1,29 @@
 {% extends 'common/index.html' %}
 {% load static %}
 
-
-
 {% block content %}
-    <section id="dashboard">
-    <h2>Cargos</h2>
+<section id="dashboard">
+  <h2>Cargos</h2>
 
-        {% if cargos %}
-            {% for cargo in cargos %}
-                <div class="card">
-                <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
-                    <h3 class="title">{{ cargo.location }}</h3>
-                    <p class="description">Date Of Departure: {{ cargo.departure_date }}.</p>
-                    <p class="description">Date Of Arrival: {{ cargo.arrival_date }}.</p>
-                    <p class="description">Cargo Type: {{ cargo.cargo_type }}.</p>
-                    <p class="description">Kilometers: {{ cargo.total_km }}.</p>
-                    <p class="description">Contact Number: {{ cargo.contact_number }}.</p>
-                    <p class="description">Description: {{ cargo.description }}.</p>
-                    <a class="details-btn" href="{% url 'details cargo' cargo.pk  %}">More Info</a>
-                </div>
-            {% endfor %}
-        {% else %}
-             <!-- Display a heading if there are no posts -->
-            <h2>No cargos yet.</h2>
-        {% endif %}
-     </section>
-
+  {% if cargos %}
+    {% for cargo in cargos %}
+      {% if cargo.is_approved %}
+        <div class="card">
+          <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
+          <h3 class="title">{{ cargo.location }}</h3>
+          <p class="description">Date Of Departure: {{ cargo.departure_date }}.</p>
+          <p class="description">Date Of Arrival: {{ cargo.arrival_date }}.</p>
+          <p class="description">Cargo Type: {{ cargo.cargo_type }}.</p>
+          <p class="description">Kilometers: {{ cargo.total_km }}.</p>
+          <p class="description">Contact Number: {{ cargo.contact_number }}.</p>
+          <p class="description">Description: {{ cargo.description }}.</p>
+          <a class="details-btn" href="{% url 'details cargo' cargo.pk %}">More Info</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <!-- Display a heading if there are no cargo posts -->
+    <h2>No cargos yet.</h2>
+  {% endif %}
+</section>
 {% endblock %}

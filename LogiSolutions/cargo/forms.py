@@ -15,7 +15,7 @@ class CargoForm(forms.ModelForm):
     class Meta:
         model = Cargo
         fields = '__all__'
-        exclude = ('owner',)
+        exclude = ('owner', 'is_approved')
         labels = {
             'destination': 'Final Destination',
             'total_km': 'Total Kilometers',
