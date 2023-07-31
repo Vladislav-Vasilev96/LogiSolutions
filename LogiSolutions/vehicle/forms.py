@@ -7,7 +7,7 @@ class VehicleForm(forms.ModelForm):
     class Meta:
         model = Vehicle
         fields = '__all__'
-        exclude = ('owner','is_approved')
+        exclude = ('owner', 'is_approved')
         widgets = {
             'license_plate': forms.TextInput(
                 attrs={
@@ -21,5 +21,5 @@ class VehicleForm(forms.ModelForm):
             ),
             'description': forms.Textarea(
                 attrs={'placeholder': 'Add Additional Information Here..'}
-            )
+            ),
         }

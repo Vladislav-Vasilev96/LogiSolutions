@@ -54,6 +54,6 @@ class CargoForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'Add Additional Information Here..'
                 }
-            )
+            ),
 
         }

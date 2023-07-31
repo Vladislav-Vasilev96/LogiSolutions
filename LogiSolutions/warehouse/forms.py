@@ -7,7 +7,7 @@ class WarehouseForm(forms.ModelForm):
     class Meta:
         model = Warehouse
         fields = '__all__'
-        exclude = ('owner','is_approved')
+        exclude = ('owner', 'is_approved')
 
         labels = {
             'square_meters_capacity': 'Area capacity'
@@ -33,6 +33,7 @@ class WarehouseForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'Location of the warehouse'
                 }
-            )
+            ),
+
 
         }

@@ -5,9 +5,9 @@
             <section id="edit">
             <div class="form">
                 <h2>Edit Cargo</h2>
-                <form class="edit-form" method='POST', action="{% url 'edit cargo' object.pk %}">
+                <form class="edit-form" method='POST' enctype="multipart/form-data" action="{% url 'edit cargo' object.pk %}">
 
-                    {{ form }}
+                    {{ form.as_p }}
                     <button type="submit">Edit</button>
                     {% csrf_token %}
                 </form>
