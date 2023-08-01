@@ -2,38 +2,36 @@
 {% load static %}
 {% block content %}
 
-        <section id="details">
-            <div id="details-wrapper">
-                <!-- fruit image -->
+    <section id="details">
+        <div id="details-wrapper">
+            {% if vehicle.vehicle_image %}
                 <img src="{{ vehicle.vehicle_image.url }}" class="card-img-top" alt="Vehicle Image">
-                <!-- fruit name -->
-                <p id="details-title">{{ vehicle.license_plate }}</p>
-                <div id="info-wrapper">
-                    <div id="details-description">
-                        <!-- fruit description -->
-                        <p>
-                            {{ vehicle.description }}
-                        </p>
-                        <!-- fruit nutrition -->
-                        <p id="nutrition">Details</p>
-                        <!-- fruit nutrition details -->
-                        <p id="details-nutrition">
-                            {{ vehicle.vehicle_type}}
-                        </p>
-                        <p id="details-nutrition">
-                            {{ vehicle.current_location}}
-                        </p>
-                        <p id="details-nutrition">
-                            {{ vehicle.max_weight}}
-                        </p>
-                    </div>
+            {% endif %}
+            <p id="details-title">{{ vehicle.license_plate }}</p>
+            <div id="info-wrapper">
+                <div id="details-description">
+                    <p>
+                        {{ vehicle.description }}
+                    </p>
+                    <p id="nutrition">Details</p>
+                    <p id="details-nutrition">
+                        {{ vehicle.vehicle_type }}
+                    </p>
+                    <p id="details-nutrition">
+                        {{ vehicle.current_location }}
+                    </p>
+                    <p id="details-nutrition">
+                        {{ vehicle.max_weight }}
+                    </p>
+                </div>
 
-                    <!--Edit and Delete buttons -->
-                    <div id="action-buttons">
+                <div id="action-buttons">
+                    {% if request.user == object.owner %}
                         <a href="{% url 'edit vehicle' vehicle.pk %}" id="edit-btn">Edit</a>
                         <a href="{% url 'delete vehicle' vehicle.pk %}" id="delete-btn">Delete</a>
-                    </div>
+                    {% endif %}
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 {% endblock %}

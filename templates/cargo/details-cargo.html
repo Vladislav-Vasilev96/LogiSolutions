@@ -2,38 +2,42 @@
 {% load static %}
 {% block content %}
 
-        <section id="details">
-            <div id="details-wrapper">
-                 <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
-                <p id="details-title">{{ object.name }}</p>
-                      <div id="info-wrapper">
-                    <div id="details-description">
+    <section id="details">
+        <div id="details-wrapper">
+            {% if cargo.cargo_image %}
+                <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
+            {% endif %}
 
-                        <p>
-                            {{ object.description }}
-                        </p>
+            <p id="details-title">{{ object.name }}</p>
+            <div id="info-wrapper">
+                <div id="details-description">
 
-                        <p>
-                            {{object.location}}
-                        </p>
-                        <p>
-                            {{object.cargo_type}}
-                        </p>
+                    <p>
+                        {{ object.description }}
+                    </p>
 
-                        <p>
-                            {{object.departure_date}}
-                        </p>
-                        <p>
-                            {{object.arrival_date}}
-                        </p>
-                    </div>
+                    <p>
+                        {{ object.location }}
+                    </p>
+                    <p>
+                        {{ object.cargo_type }}
+                    </p>
 
+                    <p>
+                        {{ object.departure_date }}
+                    </p>
+                    <p>
+                        {{ object.arrival_date }}
+                    </p>
+                </div>
 
+                {% if request.user == object.owner %}
                     <div id="action-buttons">
                         <a href="{% url 'edit cargo' object.pk %}" id="edit-btn">Edit</a>
-                        <a href="{% url 'delete cargo' object.pk  %}" id="delete-btn">Delete</a>
+                        <a href="{% url 'delete cargo' object.pk %}" id="delete-btn">Delete</a>
                     </div>
-                </div>
+                {% endif %}
             </div>
-        </section>
+        </div>
+    </section>
 {% endblock %}

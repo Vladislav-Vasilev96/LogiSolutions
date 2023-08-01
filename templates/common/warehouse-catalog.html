@@ -7,14 +7,17 @@
         {% if warehouses %}
             {% for warehouse in warehouses %}
                 {% if warehouse.is_approved %}
-                <div class="card">
-                    <img src="{{ warehouse.warehouse_image.url }}" class="card-img-top" alt="Warehouse Image">
-                    <h3 class="title">{{ warehouse.name }}</h3>
-                    <p class="description">Location: {{ warehouse.location }}</p>
-                    <p class="description">Square Metres: {{ warehouse.square_meters_capacity }}</p>
-                    <p class="description">Contact: {{ warehouse.contact_person }}</p>
-                    <a class="details-btn" href="{% url 'details warehouse' warehouse.pk  %}">More Info</a>
-                </div>
+                    <div class="card">
+                        {% if warehouse.warehouse_image %}
+                            <img src="{{ warehouse.warehouse_image.url }}" class="card-img-top" alt="Warehouse Image">
+                        {% endif %}
+
+                        <h3 class="title">{{ warehouse.name }}</h3>
+                        <p class="description">Location: {{ warehouse.location }}</p>
+                        <p class="description">Square Metres: {{ warehouse.square_meters_capacity }}</p>
+                        <p class="description">Contact: {{ warehouse.contact_person }}</p>
+                        <a class="details-btn" href="{% url 'details warehouse' warehouse.pk %}">More Info</a>
+                    </div>
                 {% endif %}
             {% endfor %}
         {% else %}

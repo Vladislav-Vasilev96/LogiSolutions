@@ -2,40 +2,38 @@
 {% load static %}
 {% block content %}
 
-  <section id="details">
-            <div id="details-wrapper">
-                <!-- fruit image -->
+    <section id="details">
+        <div id="details-wrapper">
+            {% if warehouse.warehouse_image %}
                 <img src="{{ warehouse.warehouse_image.url }}" class="card-img-top" alt="Warehouse Image">
-                <!-- fruit name -->
-                <p id="details-title">{{ warehouse.name }}</p>
-                <div id="info-wrapper">
-                    <div id="details-description">
-                        <!-- fruit description -->
-                        <p>
-                            {{ fruit.description }}
-                        </p>
-                        <!-- fruit nutrition -->
-                        <p id="nutrition">Details</p>
-                        <!-- fruit nutrition details -->
-                        <p id="details-nutrition">
-                            {{ warehouse.square_meters_capacity}}
-                        </p>
-                        <p id="details-nutrition">
-                            {{ warehouse.location}}
-                        </p>
-                        <p id="details-nutrition">
-                            {{ warehouse.contact_person}}
-                        </p>
-                    </div>
 
-                    <!--Edit and Delete buttons -->
+            {% endif %}
+            <p id="details-title">{{ warehouse.name }}</p>
+            <div id="info-wrapper">
+                <div id="details-description">
+                    <p>
+                        {{ fruit.description }}
+                    </p>
+                    <p id="nutrition">Details</p>
+                    <p id="details-nutrition">
+                        {{ warehouse.square_meters_capacity }}
+                    </p>
+                    <p id="details-nutrition">
+                        {{ warehouse.location }}
+                    </p>
+                    <p id="details-nutrition">
+                        {{ warehouse.contact_person }}
+                    </p>
+                </div>
+                {% if request.user == object.owner %}
                     <div id="action-buttons">
                         <a href="{% url 'edit warehouse' warehouse.pk %}" id="edit-btn">Edit</a>
                         <a href="{% url 'delete warehouse' warehouse.pk %}" id="delete-btn">Delete</a>
                     </div>
-                </div>
+                {% endif %}
             </div>
-        </section>
+        </div>
+    </section>
 
 
 {% endblock %}
