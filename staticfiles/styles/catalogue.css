@@ -1,63 +1,81 @@
-
-.card {
-    position: relative;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
-    float: left;
-    transition: background-color 0.3s;
-    backdrop-filter: blur(5px);
-    text-align: center;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-h2 {
-    text-align: center;
-    margin: 10px 0;
+
+/* Style for the card */
+.card {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: calc(33.33% - 20px); /* Adjust the width to fit 3 cards in one line */
+  margin: 10px;
+  transition: background-color 0.3s;
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+/* For larger screens, show 3 cards in one line */
+@media screen and (min-width: 768px) {
+  .card {
+    width: calc(33.33% - 20px); /* Adjust the width to fit 3 cards in one line */
+  }
+}
+
+/* For even larger screens, show 4 cards in one line */
+@media screen and (min-width: 992px) {
+  .card {
+    width: calc(25% - 20px); /* Adjust the width to fit 4 cards in one line */
+  }
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
-
 
 .card h3 {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
-
 .card p {
-    margin: 5px 0;
+  margin: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show only 3 lines of text */
+  -webkit-box-orient: vertical;
 }
 
 .card .details-btn {
-    display: block;
-    text-align: center;
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-
+  display: block;
+  text-align: center;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 #dashboard::after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
+
 .card:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: inherit;
-    backdrop-filter: blur(5px);
-    border-radius: inherit;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: inherit;
+  backdrop-filter: blur(5px);
+  border-radius: inherit;
+  pointer-events: none;
 }

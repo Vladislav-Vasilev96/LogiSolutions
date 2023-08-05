@@ -20,12 +20,10 @@ class Gender(ChoicesStringsMixin, ChoicesMixin, Enum):
     DO_NOT_SHOW = 'do not show'
 
 
-
-
 class WEIGHT_CHOICES(ChoicesStringsMixin, ChoicesMixin, Enum):
-    B = '1.4'
-    C = '10'
-    CE = '24'
+    B = 'Up to 1.4 tons '
+    C = 'Up to 10 tons'
+    CE = 'Up to 24 tons'
 
 
 class TypesOfTruck(ChoicesStringsMixin, ChoicesMixin, Enum):
@@ -36,8 +34,6 @@ class TypesOfTruck(ChoicesStringsMixin, ChoicesMixin, Enum):
     CAR_CARRIER_TRAILER = 'Car Carrier Trailer'
     GARBAGE_TRUCK = 'Garbage truck'
     MAIL_TRUCK = 'Mail truck'
-
-
 
 
 class ProfileType(ChoicesStringsMixin, ChoicesMixin, Enum):

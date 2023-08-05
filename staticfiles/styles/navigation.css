@@ -103,3 +103,51 @@ footer {
   background-color: #50c878;
 }
 
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.image-container a {
+  position: relative;
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+.image-container a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.image-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  border-radius: 0 0 10px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+}
+
+
+.image-container a:hover .image-text {
+  background-color: rgba(0, 0, 0, 0.9);
+}

@@ -6,6 +6,7 @@
         <h2>Cargos</h2>
 
         {% if cargos %}
+            <div class="card-container">
             {% for cargo in cargos %}
                 {% if cargo.is_approved %}
                     <div class="card">
@@ -24,6 +25,7 @@
                     </div>
                 {% endif %}
             {% endfor %}
+            </div>
         {% else %}
             <h2>No cargos yet.</h2>
         {% endif %}
