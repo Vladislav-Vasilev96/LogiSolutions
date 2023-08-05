@@ -1,12 +1,23 @@
 {% extends 'common/index.html' %}
-{% load static %}
 {% block content %}
     <div class="form-container">
         <h1 class="profile">Create Profile</h1>
         <form class="form" method="post">
-            {{ form.as_p }}
-
             {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                <input type="email" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Password</label>
+                <input type="password" id="{{ form.password1.id_for_label }}" name="{{ form.password1.name }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Repeat Password</label>
+                <input type="password" id="{{ form.password2.id_for_label }}" name="{{ form.password2.name }}" class="form-control">
+            </div>
+            <!-- Add other form fields here -->
+
             <button type="submit">Submit</button>
         </form>
     </div>

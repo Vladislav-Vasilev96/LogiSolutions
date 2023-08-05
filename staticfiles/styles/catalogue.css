@@ -1,7 +1,7 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+   justify-content: center;
 }
 
 /* Style for the card */
@@ -17,14 +17,14 @@
   text-align: center;
 }
 
-/* For larger screens, show 3 cards in one line */
+/* For screens larger than 768px, show 3 cards in one row */
 @media screen and (min-width: 768px) {
   .card {
     width: calc(33.33% - 20px); /* Adjust the width to fit 3 cards in one line */
   }
 }
 
-/* For even larger screens, show 4 cards in one line */
+/* For screens larger than 992px, show 4 cards in one row */
 @media screen and (min-width: 992px) {
   .card {
     width: calc(25% - 20px); /* Adjust the width to fit 4 cards in one line */
@@ -33,7 +33,8 @@
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Set the desired height for the images */
+  object-fit: cover;
   border-radius: 5px;
 }
 
@@ -42,7 +43,7 @@
 }
 
 .card p {
-  margin: 5px 0;
+  margin: 5px 0 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -51,6 +52,11 @@
 }
 
 .card .details-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto; /* Center the button horizontally */
   display: block;
   text-align: center;
   background-color: #4CAF50;
@@ -59,6 +65,7 @@
   border-radius: 5px;
   text-decoration: none;
 }
+
 
 #dashboard::after {
   content: "";

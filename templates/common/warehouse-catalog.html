@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block content %}
-    <h2>Warehouses</h2>
     <section id="dashboard">
+        <h2>Warehouses</h2>
         {% if warehouses %}
+            <div class="card-container">
             {% for warehouse in warehouses %}
                 {% if warehouse.is_approved %}
                     <div class="card">
                         {% if warehouse.warehouse_image %}
                             <img src="{{ warehouse.warehouse_image.url }}" class="card-img-top" alt="Warehouse Image">
                         {% endif %}
-
                         <h3 class="title">{{ warehouse.name }}</h3>
                         <p class="description">Location: {{ warehouse.location }}</p>
                         <p class="description">Square Metres: {{ warehouse.square_meters_capacity }}</p>
@@ -20,10 +20,10 @@
                     </div>
                 {% endif %}
             {% endfor %}
+            </div>
         {% else %}
-
-            </section>
             <h2>No warehouse yet.</h2>
         {% endif %}
+    </section>
 
 {% endblock %}

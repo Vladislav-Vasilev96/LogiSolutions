@@ -5,7 +5,7 @@
     <h2>Vehicles</h2>
     <section id="dashboard">
         {% if vehicles %}
-
+            <div class="card-container">
             {% for vehicle in vehicles %}
                 {% if vehicle.is_approved %}
                     <div class="card">
@@ -22,6 +22,7 @@
                     </div>
                 {% endif %}
             {% endfor %}
+            </div>
         {% else %}
             <h2>No vehicles yet.</h2>
         {% endif %}

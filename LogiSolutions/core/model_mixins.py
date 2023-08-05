@@ -21,9 +21,9 @@ class Gender(ChoicesStringsMixin, ChoicesMixin, Enum):
 
 
 class WEIGHT_CHOICES(ChoicesStringsMixin, ChoicesMixin, Enum):
-    B = 'Up to 1.4 tons '
-    C = 'Up to 10 tons'
-    CE = 'Up to 24 tons'
+    B = '1.4'
+    C = '10'
+    CE = '24'
 
 
 class TypesOfTruck(ChoicesStringsMixin, ChoicesMixin, Enum):
