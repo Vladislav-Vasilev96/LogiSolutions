@@ -11,15 +11,24 @@ class VehicleForm(forms.ModelForm):
         widgets = {
             'license_plate': forms.TextInput(
                 attrs={
-                    'placeholder': 'CB0430PM..'
+                    'placeholder': 'CB0430PM..',
+                    'class': 'form-group centered-placeholder',
                 }
             ),
             'current_location': forms.TextInput(
                 attrs={
-                    'placeholder': 'Town, Country..'
+                    'placeholder': 'Town, Country..',
+                    'class': 'form-group centered-placeholder',
                 }
             ),
             'description': forms.Textarea(
-                attrs={'placeholder': 'Add Additional Information Here..'}
+                attrs={
+                    'placeholder': 'Add Additional Information Here..',
+                    'class': 'form-group centered-placeholder',
+                }
             ),
+
         }
+
+
+

@@ -1,17 +1,14 @@
 {% extends 'common/index.html' %}
 {% load static %}
 {% block content %}
-    <main>
-
-        <section id="create">
-            <div class="form">
-                <h2>Add Vehicle</h2>
-                <form class="create-form" method="post" action="{% url 'create vehicle' %}" enctype="multipart/form-data">
-                    {{ form.as_p }}
-                    <button type="submit">Add Vehicle</button>
-                    {% csrf_token %}
-                </form>
-            </div>
-        </section>
-    </main>
+    <div class="form-container">
+        <h1 style="text-align: center;">Add Vehicle</h1>
+        <div class="form-group">
+            <form class="form" method="post" action="{% url 'create vehicle' %}" enctype="multipart/form-data">
+                {{ form.as_p }}
+                <button type="submit">Add Vehicle</button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
 {% endblock %}

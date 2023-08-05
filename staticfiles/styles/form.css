@@ -1,70 +1,151 @@
-/* Form container */
 .form-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #f2f2f2; /* Set your desired background color */
-  border-radius: 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 100px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
 }
 
-.form h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+
+.form-field {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #333;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    text-align: center;
 }
 
 .form input[type="text"],
-.form textarea,
-.form input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  font-size: 16px;
+.form input[type="email"],
+.form input[type="password"],
+.form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form input[type="file"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    line-height: normal;
+    box-sizing: border-box;
+}
+
+.form input[type="file"]:hover {
+    border-color: #ffffff;
+}
+
+.form input[type="file"]:focus {
+    outline: none;
+    border-color: #4CAF50;
 }
 
 .form textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 .form button {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  width: 100%;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
 }
 
 .form button:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
 
 .form .error-message {
-  color: #d9534f;
-  margin-bottom: 10px;
+    color: #d9534f;
+    margin-bottom: 10px;
 }
 
 .form .error-message p {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
-/* Center the form on smaller screens */
+.form-field {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+
+.form select::after {
+    content: "?";
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.form select::-ms-expand {
+    display: none;
+}
+
+
+.form select:hover {
+    border-color: #999;
+}
+
+
+.form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+
 @media (max-width: 600px) {
-  .form-container {
-    max-width: 100%;
-  }
+    .form-container {
+        max-width: 100%;
+    }
 }
