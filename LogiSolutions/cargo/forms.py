@@ -14,11 +14,14 @@ class DateInput(forms.DateInput):
 class CargoForm(forms.ModelForm):
     class Meta:
         model = Cargo
-        fields = '__all__'
+        fields = ['name', 'location', 'destination', 'total_km', 'cargo_type', 'contact_number', 'weight',
+                  'cargo_image', 'departure_date', 'arrival_date', 'description']
         exclude = ('owner', 'is_approved')
         labels = {
+            'name': 'Name of item',
             'destination': 'Final Destination',
             'total_km': 'Total Kilometers',
+
         }
 
         widgets = {
