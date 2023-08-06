@@ -2,6 +2,7 @@ from django.db import models
 
 from LogiSolutions.accounts.models import CustomUser
 from LogiSolutions.core.model_mixins import TypesOfTruck, WEIGHT_CHOICES
+from LogiSolutions.core.validators import validate_phone_number
 
 
 class Vehicle(models.Model):
@@ -43,7 +44,8 @@ class Vehicle(models.Model):
         null=False,
         blank=False,
         max_length=CONTACT_NUMBER_MAX_LENGTH,
-        default='+359'
+        default='+359',
+        validators=[validate_phone_number],
     )
     is_approved = models.BooleanField(
         default=False

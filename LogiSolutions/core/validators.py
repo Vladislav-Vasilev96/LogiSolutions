@@ -7,4 +7,7 @@ def validate_phone_number(value):
     pattern = r'^\+359\d{9}$'
 
     if not re.Match(pattern, value):
-        raise ValidationError('Invalid mobile phone number.')
+        raise ValidationError('Invalid mobile phone number')
+
+    if value in None:
+        raise ValidationError('Phone cannot be `None`')

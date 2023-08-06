@@ -1,6 +1,7 @@
 from django.db import models
 
 from LogiSolutions.accounts.models import CustomUser
+from LogiSolutions.core.validators import validate_phone_number
 
 
 class Warehouse(models.Model):
@@ -22,8 +23,9 @@ class Warehouse(models.Model):
     contact_person = models.CharField(
         max_length=CONTACT_PERSON_MAX_LENGTH,
         null=False,
-        blank=True,
-        default='+359'
+        blank=False,
+        default='+359',
+        validators=[validate_phone_number]
 
     )
     warehouse_image = models.ImageField(

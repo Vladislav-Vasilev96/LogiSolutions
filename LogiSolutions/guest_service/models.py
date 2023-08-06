@@ -1,5 +1,7 @@
 from django.db import models
 
+from LogiSolutions.core.validators import validate_phone_number
+
 
 class GuestServiceFormSubmission(models.Model):
     PHONE_MAX_LENGTH = 13
@@ -15,7 +17,8 @@ class GuestServiceFormSubmission(models.Model):
         null=False,
         blank=False,
         max_length=PHONE_MAX_LENGTH,
-        default='+359'
+        default='+359',
+        validators=[validate_phone_number]
     )
 
     date_asked = models.DateField(
