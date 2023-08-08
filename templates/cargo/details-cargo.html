@@ -3,13 +3,13 @@
 {% block content %}
 
     <section id="details">
-        <div id="details-wrapper">
+        <div id="details-item">
             {% if cargo.cargo_image %}
                 <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
             {% endif %}
 
             <p id="details-title">{{ object.name }}</p>
-            <div id="info-wrapper">
+            <div id="info-item">
                 <div id="details-description">
 
                     <p>

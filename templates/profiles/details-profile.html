@@ -7,7 +7,7 @@
 
 
         <section id="details">
-            <div id="details-wrapper">
+            <div id="details-profile">
                 <h2>Profile Details</h2>
                 {% if profile.profile_image %}
                 <img src="{{ profile.profile_image }}" alt="" width="200" height="200" />
@@ -16,7 +16,7 @@
                 {% endif %}
                 <p id="details-title">Name: {{ profile.first_name }} {{ profile.last_name }}</p>
 
-                <div id="info-wrapper">
+                <div id="info-profile">
                     <div id="details-description">
                         <p>
                             Email: {{ profile.email }}

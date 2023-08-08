@@ -2,25 +2,25 @@
 {% load static %}
 {% block content %}
 
-    <section id="details">
+    <section id="details-items">
         <div id="details-wrapper">
             {% if vehicle.vehicle_image %}
-                <img src="{{ vehicle.vehicle_image.url }}" class="card-img-top" alt="Vehicle Image">
+                <img src="{{ vehicle.vehicle_image.url }}" class="w3-border w3-padding" alt="Vehicle Image">
             {% endif %}
             <p id="details-title">{{ vehicle.license_plate }}</p>
-            <div id="info-wrapper">
+            <div id="info-item">
                 <div id="details-description">
                     <p>
                         {{ vehicle.description }}
                     </p>
-                    <p id="nutrition">Details</p>
-                    <p id="details-nutrition">
+                    <p id="item">Details</p>
+                    <p id="details-item">
                         {{ vehicle.vehicle_type }}
                     </p>
-                    <p id="details-nutrition">
+                    <p id="details-item">
                         {{ vehicle.current_location }}
                     </p>
-                    <p id="details-nutrition">
+                    <p id="details-item">
                         {{ vehicle.max_weight }}
                     </p>
                 </div>
