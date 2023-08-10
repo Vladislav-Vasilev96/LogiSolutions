@@ -13,7 +13,6 @@
                     <p>
                         {{ warehouse.description }}
                     </p>
-                    <p id="item">Details</p>
                     <p id="details-item">
                         Square Meters Capacity: {{ warehouse.square_meters_capacity }}
                     </p>
@@ -27,9 +26,7 @@
                         <a href="{% url 'delete warehouse' warehouse.pk %}" id="delete-btn">Delete</a>
                     </div>
                 {% else %}
-                    <p>If you are interested in this offer, please contact us at:</p>
-                        <p> Contact Person: {{ warehouse.contact_person }} </p>
-
+                    <p>If you are interested in this offer, please contact us at: {{ warehouse.contact_person }} </p>
                 {% endif %}
             </div>
         </div>

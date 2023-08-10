@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<section id="edit">
+    <div class="form-container">
     <div class="form">
         <h2>Edit Warehouse</h2>
         <form class="edit-form" method='POST' enctype="multipart/form-data" action="{% url 'edit warehouse' warehouse.pk %}">
@@ -11,5 +11,6 @@
             {% csrf_token %}
         </form>
     </div>
-</section>
+        </div>
+
 {% endblock %}

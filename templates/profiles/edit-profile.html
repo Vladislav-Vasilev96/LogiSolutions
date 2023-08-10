@@ -1,20 +1,13 @@
 {% extends 'common/index.html' %}
 {% load static %}
 {% block content %}
-    <main>
-
-        <!-- Edit Profile Form -->
-
-        <section id="register">
-            <div class="form">
-                <h2>Edit Profile</h2>
-                <form class="register-form" method="POST" action="">
-                    {{ form }}
+      <div class="form-container">
+             <h1 class="profile">Edit Profile</h1>
+                <form class="form" method="post" enctype="multipart/form-data">
+                    {{ form.as_p }}
+                     {% csrf_token %}
                     <button type="submit">Edit</button>
-                    {% csrf_token %}
+
                 </form>
             </div>
-        </section>
-
-    </main>
 {% endblock %}

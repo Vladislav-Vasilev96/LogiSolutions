@@ -10,7 +10,7 @@
 </head>
 
 <body style="background-image: url('{% static 'images/background.jpg' %}')">
-<div id="wrapper">
+<div id="wrapper-nav">
     <header>
         <!-- Navigation -->
         <a id="logo" href="{% url 'IndexView' %}">
@@ -19,6 +19,7 @@
         </a>
 
         <nav>
+          <ul class="nav-list">
             {% if user.is_authenticated %}
 
                 <div class="user">
@@ -30,7 +31,6 @@
                             <a href="{% url 'WarehouseCatalogView' %}">Warehouse Catalog</a>
                         </div>
                     </li>
-                    <a href="#">About</a>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Add</a>
                         <div class="dropdown-content">
@@ -55,6 +55,7 @@
                     <a href="{% url 'GuestView' %}">Contacts</a>
                 </div>
             {% endif %}
+          </ul>
         </nav>
     </header>
 
@@ -68,7 +69,9 @@
 </div>
 
 <footer>
-    <p>@LogiSolutions - SoftUni final Exam. Vladislav Vasilev.</p>
+
+     <a> @LogiSolutions - SoftUni final Exam. Vladislav Vasilev.</a>
+
 </footer>
 </body>
 </html>

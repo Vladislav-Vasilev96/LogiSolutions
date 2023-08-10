@@ -1,12 +1,17 @@
 {% extends 'common/index.html' %}
 {% load static %}
 {% block content %}
-    <h2>Welcome to LogiSolutions</h2>
+
+<h1 class="centered-title">Welcome to LogiSolutions!</h1>
+<div class="text-box">
+  <div class="text-content">
     <p>
-        Unlock the power of user-driven logistics! LogiSolutions connects cargo owners, vehicle providers,
-        and warehouse operators in one unified platform, revolutionizing the way logistics is managed. Embrace
-        the simplicity of finding the perfect match for your logistics needs.
+       LogiSolutions connects cargo owners, vehicle providers,
+      and warehouse operators in one unified platform, revolutionizing the way logistics is managed. Embrace
+      the simplicity of finding the perfect match for your logistics needs.
     </p>
+  </div>
+</div>
     <div class="image-container">
         <a href="{% url 'CargoCatalogView' %}">
             <img src="{% static 'images/cargo.jpeg' %}" alt="Cargo Image">
@@ -21,4 +26,5 @@
             <span class="image-text">Warehouse</span>
         </a>
     </div>
+
 {% endblock %}

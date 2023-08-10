@@ -3,32 +3,39 @@
 {% block content %}
 
     <section id="details">
-        <div id="details-item">
+      <div class="details-container">
+        <div id="details-wrapper">
             {% if cargo.cargo_image %}
                 <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
             {% endif %}
 
-            <p id="details-title">{{ object.name }}</p>
-            <div id="info-item">
+            <p id="details-title">{{ cargo.name }}</p>
+            <div id="info-wrapper">
                 <div id="details-description">
 
-                    <p>
-                        {{ object.description }}
+                    <p id="details-item">
+                        {{ cargo.description }}
                     </p>
 
-                    <p>
-                        {{ object.location }}
-                    </p>
-                    <p>
-                        {{ object.cargo_type }}
-                    </p>
+            <div id="details-item">
+                 <div class="detail">
+                    <div class="detail-label">Location</div>
+                    <div class="detail-value">{{ cargo.location }}</div>
+                 </div>
 
-                    <p>
-                        {{ object.departure_date }}
-                    </p>
-                    <p>
-                        {{ object.arrival_date }}
-                    </p>
+                <div class="detail">
+                <div class="detail-label">Type</div>
+                 <div class="detail-value">{{ cargo.cargo_type }}</div>
+             </div>
+
+             <div class="detail">
+                <div class="detail-label">Date Of Departure</div>
+                 <div class="detail-value">{{ cargo.departure_date }}</div>
+             </div>
+                <div class="detail">
+                <div class="detail-label">Arrival date</div>
+                 <div class="detail-value">{{ cargo.arrival_date }}</div>
+             </div>
                 </div>
 
                 {% if request.user == object.owner %}
@@ -36,8 +43,12 @@
                         <a href="{% url 'edit cargo' object.pk %}" id="edit-btn">Edit</a>
                         <a href="{% url 'delete cargo' object.pk %}" id="delete-btn">Delete</a>
                     </div>
+                {% else %}
+                    <p>If you are interested in this offer, please contact us at: {{ cargo.contact_number }} </p>
                 {% endif %}
             </div>
         </div>
+        <div>
+
     </section>
 {% endblock %}

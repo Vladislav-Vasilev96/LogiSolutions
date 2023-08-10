@@ -1,12 +1,15 @@
 {% extends 'common/index.html' %}
-{% load static %}
-{% block content %}
 
-    <h1>Logout Confirmation</h1>
-    <p>Are you sure you want to logout?</p>
-    <form action="{% url 'LogoutView' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
-    <a href="{% url 'IndexView' %}">Cancel</a>
+{% block content %}
+    <div class="logout-form-container">
+        <h1>Logout Confirmation</h1>
+        <p>Are you sure you want to log out?</p>
+        <form class="form"  action="{% url 'LogoutView' %}" method="post">
+            {% csrf_token %}
+            <div class="button-container">
+                <button class="form-button logout" type="submit">Logout</button>
+                <a href="{% url 'IndexView' %}" class="form-button cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
 {% endblock %}
