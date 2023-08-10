@@ -48,8 +48,24 @@
 
 .action-buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+}
+
+.action-buttons a {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons a:hover {
+  background-color: #45a049;
 }
 
 .action-buttons button {

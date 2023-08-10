@@ -5,7 +5,7 @@
   <section id="details">
         <div id="details-wrapper">
             {% if vehicle.vehicle_image %}
-                <img src="{{ vehicle.vehicle_image.url }}" class="w3-border w3-padding" alt="Vehicle Image">
+                <img src="{{ vehicle.vehicle_image.url }}" class="card-img-top" alt="Vehicle Image">
             {% endif %}
             <p id="details-title">{{ vehicle.license_plate }}</p>
                <div id="info-wrapper">
@@ -13,15 +13,14 @@
                     <p>
                         {{ vehicle.description }}
                     </p>
-                    <p id="item">Details</p>
                     <p id="details-item">
-                        {{ vehicle.vehicle_type }}
+                      Type:  {{ vehicle.vehicle_type }}
                     </p>
                     <p id="details-item">
-                        {{ vehicle.current_location }}
+                      Location:  {{ vehicle.current_location }}
                     </p>
                     <p id="details-item">
-                        {{ vehicle.max_weight }}
+                        Max weigth: {{ vehicle.max_weight }}
                     </p>
                 </div>
 
@@ -29,7 +28,10 @@
                     {% if request.user == object.owner %}
                         <a href="{% url 'edit vehicle' vehicle.pk %}" id="edit-btn">Edit</a>
                         <a href="{% url 'delete vehicle' vehicle.pk %}" id="delete-btn">Delete</a>
-                    {% endif %}
+                </div>
+                {% else %}
+                    <p>If you are interested in this offer, please contact us at: {{vehicle.contact_number }} </p>
+                {% endif %}
                 </div>
             </div>
         </div>

@@ -3,40 +3,29 @@
 {% block content %}
 
     <section id="details">
-      <div class="details-container">
         <div id="details-wrapper">
             {% if cargo.cargo_image %}
                 <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
             {% endif %}
-
             <p id="details-title">{{ cargo.name }}</p>
             <div id="info-wrapper">
                 <div id="details-description">
-
-                    <p id="details-item">
+                    <p>
                         {{ cargo.description }}
                     </p>
+                    <p id="details-item">
+                        Location: {{ cargo.location }}
+                    </p>
+                    <p id="details-item">
+                        Type : {{ cargo.cargo_type }}
+                                   </p>
 
-            <div id="details-item">
-                 <div class="detail">
-                    <div class="detail-label">Location</div>
-                    <div class="detail-value">{{ cargo.location }}</div>
-                 </div>
-
-                <div class="detail">
-                <div class="detail-label">Type</div>
-                 <div class="detail-value">{{ cargo.cargo_type }}</div>
-             </div>
-
-             <div class="detail">
-                <div class="detail-label">Date Of Departure</div>
-                 <div class="detail-value">{{ cargo.departure_date }}</div>
-             </div>
-                <div class="detail">
-                <div class="detail-label">Arrival date</div>
-                 <div class="detail-value">{{ cargo.arrival_date }}</div>
-             </div>
-                </div>
+                    <p id="details-item">
+                        Date Of Departure: {{ cargo.departure_date }}
+                                 </p>
+                    <p id="details-item">
+                         Arrival date: {{ cargo.arrival_date }}
+                        </p>
 
                 {% if request.user == object.owner %}
                     <div id="action-buttons">
