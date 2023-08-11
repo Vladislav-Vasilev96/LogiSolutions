@@ -1,22 +1,18 @@
 {% extends 'common/index.html' %}
 {% load static %}
 {% block content %}
-    <main>
-
-        <section id="edit">
-
-            <div class="form">
-                <h1>Are you sure you want to delete your profile?</h1>
-                
-                <!-- Delete Profile Form -->
-                <form id='delete' class="register-form">
-                    <!-- Confirm Button -->
-                    <button type="submit">Yes</button>
-
-                </form>
-                <!-- End Delete Profile Form -->
+    <div class="delete-form-container">
+        <h1>Delete Confirmation</h1>
+        <p>Are you sure you want to delete your profile?</p>
+        <form class="form" action="{% url 'DeleteProfileVIew' pk=user.pk %}" method="post">
+            {% csrf_token %}
+            <div class="button-container">
+                <button class='form-button logout' type="submit">Delete</button>
+                <a href="{% url 'IndexView' %}" class="form-button cancel">Cancel</a>
             </div>
-            
-        </section>
-    </main>
+        </form>
+    </div>
 {% endblock %}
+
+
+{#<button class="form-button logout" type="submit">Logout</button>#}
