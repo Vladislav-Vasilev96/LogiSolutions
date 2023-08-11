@@ -16,7 +16,7 @@ class CargoForm(forms.ModelForm):
         model = Cargo
         fields = ['name', 'location', 'destination', 'total_km', 'cargo_type', 'contact_number', 'weight',
                   'cargo_image', 'departure_date', 'arrival_date', 'description']
-        exclude = ('owner', 'is_approved')
+        exclude = ('owner', 'is_approved','created_at')
         labels = {
             'name': 'Name of item',
             'destination': 'Final Destination',
