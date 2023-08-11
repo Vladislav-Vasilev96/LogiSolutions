@@ -4,41 +4,41 @@
    justify-content: center;
 }
 h2 {
-    font-size: 36px; /* Adjust the font size as needed */
+    font-size: 36px;
     margin: 20px 0;
     text-align: center;
 }
 
-/* Style for the card */
+
 .card {
   position: relative;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  width: calc(33.33% - 20px); /* Adjust the width to fit 3 cards in one line */
+  width: calc(33.33% - 20px);
   margin: 10px;
   transition: background-color 0.3s;
   backdrop-filter: blur(5px);
   text-align: center;
 }
 
-/* For screens larger than 768px, show 3 cards in one row */
+
 @media screen and (min-width: 768px) {
   .card {
-    width: calc(33.33% - 20px); /* Adjust the width to fit 3 cards in one line */
+    width: calc(33.33% - 20px); /
   }
 }
 
-/* For screens larger than 992px, show 4 cards in one row */
+
 @media screen and (min-width: 992px) {
   .card {
-    width: calc(25% - 20px); /* Adjust the width to fit 4 cards in one line */
+    width: calc(25% - 20px);
   }
 }
 
 .card img {
   width: 100%;
-  height: 200px; /* Set the desired height for the images */
+  height: 200px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -52,7 +52,7 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Show only 3 lines of text */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -61,7 +61,7 @@ h2 {
   bottom: 10px;
   left: 0;
   right: 0;
-  margin: 0 auto; /* Center the button horizontally */
+  margin: 0 auto;
   display: block;
   text-align: center;
   background-color: #4CAF50;

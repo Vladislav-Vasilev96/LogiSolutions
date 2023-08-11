@@ -7,15 +7,10 @@
     <main>
        {% if combined_objects %}
             {% for combined_obj in combined_objects %}
-                <!-- object -->
                 <div class="{{ combined_obj.model_name }}">
-                    <!-- object image -->
                     <img src="{{ combined_obj.obj.image_URL }}" alt="{{ combined_obj.obj.name }}"/>
-                    <!-- object name -->
                     <h3 class="title">{{ combined_obj.obj.name }}</h3>
-                    <!-- object description -->
                     <p class="description">{{ combined_obj.obj.description }}.</p>
-                    <!-- object details button -->
                     <a class="details-btn" href="{% url 'CatalogView' %}">More Info</a>
                 </div>
             {% endfor %}

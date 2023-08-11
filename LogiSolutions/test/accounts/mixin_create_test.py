@@ -1,5 +1,4 @@
 from django import test
-from django.urls import reverse
 
 
 class CreateTestDataMixin(test.TestCase):

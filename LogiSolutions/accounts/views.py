@@ -41,16 +41,7 @@ class LoginUserView(LoginView):
         return reverse_lazy('IndexView')
 
 
-# class LoginUserView(LoginView):
-#     redirect_authenticated_user = True
-#     template_name = 'profiles/login.html'
-#     success_url = reverse_lazy('IndexView')
-#
-#
-#     def get_success_url(self):
-#         if self.success_url:
-#             return self.success_url
-#         return super().success_url
+
 
 class LogoutConfirmationView(generic_views.TemplateView):
     template_name = 'profiles/logout-confromation.html'
@@ -118,15 +109,3 @@ class ChangePasswordView(PasswordChangeView):
     def get_success_url(self):
         return reverse('LoginView')
 
-
-# class ChangePasswordView(auth_views.PasswordChangeView):
-#     template_name = 'user/change_password.html'
-#     form_class = ChangePasswordForm
-#
-#     def form_valid(self, form):
-#         response = super().form_valid(form)
-#         logout(self.request)
-#         return response
-#
-#     def get_success_url(self):
-#         return reverse('login user')

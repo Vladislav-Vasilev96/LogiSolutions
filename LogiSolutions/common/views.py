@@ -1,6 +1,5 @@
 from django.views import generic as generic_views
 
-from LogiSolutions.accounts.models import Profile
 from LogiSolutions.cargo.models import Cargo
 from LogiSolutions.vehicle.models import Vehicle
 from LogiSolutions.warehouse.models import Warehouse
@@ -12,16 +11,6 @@ class IndexView(generic_views.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
-
-
-        # try:
-        #     profile = Profile.objects.get(user=user.pk)
-        #     context['profile'] = profile
-        # except Profile.DoesNotExist:
-        #     context['profile'] = None
-        # context['user'] = user
-        # return context
-
 
 
 class CargoCatalog(generic_views.ListView):
