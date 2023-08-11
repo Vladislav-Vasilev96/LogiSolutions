@@ -96,6 +96,7 @@ class EditUserView(generic_views.UpdateView):
 
 class DeleteUserView(CustomPermissionMixin, generic_views.DeleteView):
     TEMPLATE_NAME = 'Delete Profile'
+    template_name = 'profiles/delete-profile.html'
     model = CustomUser
     success_url = reverse_lazy('IndexView')
 

@@ -14,13 +14,13 @@
                         {{ vehicle.description }}
                     </p>
                     <p id="details-item">
-                      Type:  {{ vehicle.vehicle_type }}
+                     <strong> Type:</strong>  {{ vehicle.vehicle_type }}
                     </p>
                     <p id="details-item">
-                      Location:  {{ vehicle.current_location }}
+                      <strong>Location:</strong>  {{ vehicle.current_location }}
                     </p>
                     <p id="details-item">
-                        Max weigth: {{ vehicle.max_weight }}
+                        <strong>Max weight:</strong> {{ vehicle.max_weight }}
                     </p>
                 </div>
 
@@ -30,7 +30,7 @@
                         <a href="{% url 'delete vehicle' vehicle.pk %}" id="delete-btn">Delete</a>
                 </div>
                 {% else %}
-                    <p>If you are interested in this offer, please contact us at: {{vehicle.contact_number }} </p>
+                        <p><strong>If you are interested in this offer, please contact owners at:</strong> {{vehicle.contact_number }} </p>
                 {% endif %}
                 </div>
             </div>

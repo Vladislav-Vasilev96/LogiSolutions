@@ -13,11 +13,10 @@
                             <img src="{{ vehicle.vehicle_image.url }}" class="card-img-top" alt="Vehicle Image">
                         {% endif %}
                         <h3 class="title">{{ vehicle.current_location }}</h3>
-                        <p class="description">Max weight:{{ vehicle.max_weight }} tons.</p>
-                        <p class="description">Status: {{ vehicle.status }}.</p>
-                        <p class="description">Type: {{ vehicle.vehicle_type }}.</p>
-                        <p class="description">Contact Number: {{ vehicle.contact_number }}.</p>
-                        <p class="description">Description:{{ vehicle.description }}.</p>
+                        <p><strong>Max weight:</strong>{{ vehicle.max_weight }} tons.</p>
+                        <p><strong>Type:</strong> {{ vehicle.vehicle_type }}.</p>
+                        <p><strong>Contact Number:</strong> {{ vehicle.contact_number }}.</p>
+                        <p><strong>Description:</strong>{{ vehicle.description }}.</p>
                         <a class="details-btn" href="{% url 'details vehicle' vehicle.pk %}">More Info</a>
                     </div>
                 {% endif %}

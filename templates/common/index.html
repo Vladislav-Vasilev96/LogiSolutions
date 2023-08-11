@@ -12,7 +12,6 @@
 <body style="background-image: url('{% static 'images/background.jpg' %}')">
 <div id="wrapper-nav">
     <header>
-        <!-- Navigation -->
         <a id="logo" href="{% url 'IndexView' %}">
             <img id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/>
 
@@ -49,7 +48,7 @@
 
             {% else %}
                 <div class="guest">
-                    {#                    <a href="{% url 'CatalogView' %}">Catalogue</a>#}
+
                     <a href="{% url 'RegisterView' %}">SignIn</a>
                     <a href="{% url 'LoginView' %}">LogIn</a>
                     <a href="{% url 'GuestView' %}">Contacts</a>

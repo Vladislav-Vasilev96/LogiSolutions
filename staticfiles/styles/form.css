@@ -5,9 +5,55 @@
     background-color: #f2f2f2;
     border-radius: 50px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+
 
 }
 
+.center-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-container a {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.button-container a:hover {
+    background-color: #45a049;
+}
+
+#delete-btn {
+    background-color: #d9534f;
+}
+
+#delete-btn:hover {
+    background-color: #c9302c;
+}
+
+#change-password-btn {
+    background-color: #337ab7;
+}
+
+#change-password-btn:hover {
+    background-color: #286090;
+}
 
 
 .logout-form-container {
@@ -83,6 +129,17 @@
     font-size: 16px;
     text-align: center;
 }
+.form input[type="url"],
+.form input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+}
 
 .form input[type="file"] {
     padding: 12px;
@@ -119,6 +176,7 @@
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    margin: 20px;
 
 }
 

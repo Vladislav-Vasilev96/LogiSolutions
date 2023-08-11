@@ -4,7 +4,7 @@
     <div class="logout-form-container">
         <h1>Logout Confirmation</h1>
         <p>Are you sure you want to log out?</p>
-        <form class="form"  action="{% url 'LogoutView' %}" method="post">
+        <form class="form" action="{% url 'LogoutView' %}" method="post">
             {% csrf_token %}
             <div class="button-container">
                 <button class="form-button logout" type="submit">Logout</button>

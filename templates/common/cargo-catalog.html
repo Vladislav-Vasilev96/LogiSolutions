@@ -14,13 +14,14 @@
                             <img src="{{ cargo.cargo_image.url }}" class="card-img-top" alt="Cargo Image">
                         {% endif %}
 
-                        <h3 class="title">{{ cargo.location }}</h3>
-                        <p class="description">Date Of Departure: {{ cargo.departure_date }}.</p>
-                        <p class="description">Date Of Arrival: {{ cargo.arrival_date }}.</p>
-                        <p class="description">Cargo Type: {{ cargo.cargo_type }}.</p>
-                        <p class="description">Kilometers: {{ cargo.total_km }}.</p>
-                        <p class="description">Contact Number: {{ cargo.contact_number }}.</p>
-                        <p class="description">Description: {{ cargo.description }}.</p>
+                        <h3 class="title">{{ cargo.name }}</h3>
+                        <p><strong>Location:</strong> {{ cargo.location }}</p>
+                        <p><strong>Date Of Departure:</strong>  {{ cargo.departure_date }}.</p>
+                        <p><strong>Date Of Arrival:</strong>  {{ cargo.arrival_date }}.</p>
+                        <p><strong>Cargo Type:</strong>  {{ cargo.cargo_type }}.</p>
+                        <p><strong>Kilometers:</strong>  {{ cargo.total_km }}.</p>
+                        <p><strong>Contact Number:</strong>  {{ cargo.contact_number }}.</p>
+                        <p><strong>Description:</strong>  {{ cargo.description }}.</p>
                         <a class="details-btn" href="{% url 'details cargo' cargo.pk %}">More Info</a>
                     </div>
                 {% endif %}

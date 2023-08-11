@@ -9,5 +9,5 @@ def validate_phone_number(value):
     if not re.match(pattern, value):
         raise ValidationError('Invalid mobile phone number')
 
-    if value in None:
+    if value is None:
         raise ValidationError('Phone cannot be `None`')

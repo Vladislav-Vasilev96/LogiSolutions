@@ -14,30 +14,29 @@
                         {{ cargo.description }}
                     </p>
                     <p id="details-item">
-                        Location: {{ cargo.location }}
+                        <strong>Location:</strong> {{ cargo.location }}
                     </p>
                     <p id="details-item">
-                        Type : {{ cargo.cargo_type }}
-                                   </p>
+                        <strong>Type:</strong>{{ cargo.cargo_type }}</p>
 
                     <p id="details-item">
-                        Date Of Departure: {{ cargo.departure_date }}
-                                 </p>
+                        <strong>Date Of Departure:</strong> {{ cargo.departure_date }}
+                    </p>
                     <p id="details-item">
-                         Arrival date: {{ cargo.arrival_date }}
-                        </p>
+                        <strong>Arrival date:</strong> {{ cargo.arrival_date }}</p>
 
-                {% if request.user == object.owner %}
-                    <div id="action-buttons">
-                        <a href="{% url 'edit cargo' object.pk %}" id="edit-btn">Edit</a>
-                        <a href="{% url 'delete cargo' object.pk %}" id="delete-btn">Delete</a>
-                    </div>
-                {% else %}
-                    <p>If you are interested in this offer, please contact us at: {{ cargo.contact_number }} </p>
-                {% endif %}
+                    {% if request.user == object.owner %}
+                        <div class="button-container">
+                            <a href="{% url 'edit cargo' object.pk %}" id="edit-btn">Edit</a>
+                            <a href="{% url 'delete cargo' object.pk %}" id="delete-btn">Delete</a>
+                        </div>
+                    {% else %}
+                        <p><strong>If you are interested in this offer, please contact owners
+                            at:</strong> {{ cargo.contact_number }} </p>
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        <div>
+            <div>
 
     </section>
 {% endblock %}

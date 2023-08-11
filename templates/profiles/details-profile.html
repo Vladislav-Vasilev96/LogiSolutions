@@ -4,9 +4,6 @@
 {% block content %}
 
     <main class="profile-main">
-
-
-        <section id="details">
             <div id="details-profile">
                 <h2>Profile Details</h2>
                 {% if profile.profile_image %}
@@ -14,28 +11,24 @@
                 {% else %}
                 <img id="details-img" src="{% static 'images/default.png' %}" alt="profile img"/>
                 {% endif %}
-                <p id="details-title">Name: {{ profile.first_name }} {{ profile.last_name }}</p>
-
+                <p id="details-title"><strong>Name:</strong> {{ profile.first_name }} {{ profile.last_name }}</p>
                 <div id="info-profile">
                     <div id="details-description">
                         <p>
-                            Email: {{ profile.email }}
+                         <strong>Email:</strong> {{ profile.email }}
                         </p>
                         <p>
-                            Age: {{ profile.age }}
+                            <strong>Age:</strong> {{ profile.age }}
                         </p>
 
                     </div>
 
-                    <div id="action-buttons">
-                        <a href="{% url 'EditProfileView' pk=user.pk %}" id="edit-btn">Edit</a>
-                        <a href="#" id="delete-btn">Delete</a>
+                    <div class="button-container">
+                        <a href="{% url 'EditProfileView' pk=user.pk %}" id="form-button cancel">Edit</a>
+                        <a href="{% url 'DeleteProfileVIew' pk=user.pk %}" id="delete-btn">Delete</a>
                         <a href="{% url 'ChangePasswordView' pk=user.pk %}" id="change-password-btn">Change Password</a>
-
                     </div>
                 </div>
             </div>
-        </section>
-
     </main>
 {% endblock %}

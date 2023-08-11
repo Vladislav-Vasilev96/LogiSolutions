@@ -188,3 +188,73 @@ footer {
 .image-container a:hover .image-text {
   background-color: rgba(0, 0, 0, 0.9);
 }
+.question-form {
+  margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+
+
+.question-section .form-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.question-section input[type="email"],
+.question-section input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Style for question textarea */
+.question-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  resize: vertical;
+  color: #333;
+}
+
+/* Style for Send Question button */
+.question-section .btn-primary {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
+   display: inline-block;
+
+}
+
+.question-section .btn-primary:hover {
+  background-color: #45a049;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .form-group {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
