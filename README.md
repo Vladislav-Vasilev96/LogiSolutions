@@ -5,18 +5,25 @@
 
 ## <div align="center"> Key Features </div>
 
-### Cargo and Vehicle Matching
-LogiSolutions simplifies the process of finding the perfect cargo for your vehicle or the right vehicle for your cargo. 
+<div align="center">
+  <h2>Cargo and Vehicle Matching</h2>
+  <p>LogiSolutions simplifies the process of finding the perfect cargo for your vehicle or the right vehicle for your cargo.</p>
+</div>
 
-### Strict Admin Moderation
-Enhancing security and preventing fake posts, LogiSolutions incorporates strict admin moderation. Every post made by users is subject to approval by an admin. This process guarantees the authenticity of posts and maintains the quality of listings.
+<div align="center">
+  <h2>Strict Admin Moderation</h2>
+  <p>Enhancing security and preventing fake posts, LogiSolutions incorporates strict admin moderation. Every post made by users is subject to approval by an admin. This process guarantees the authenticity of posts and maintains the quality of listings.</p>
+</div>
 
-### User Interaction and Support
-Even without logging in, users can ask questions about logistics and receive expert guidance. LogiSolutions' support team is dedicated to promptly responding and offering assistance to anyone seeking information or guidance.
+<div align="center">
+  <h2>User Interaction and Support</h2>
+  <p>Even without logging in, users can ask questions about logistics and receive expert guidance. LogiSolutions' support team is dedicated to promptly responding and offering assistance to anyone seeking information or guidance.</p>
+</div>
 
-## Seamless and Secure Logistics Management
-LogiSolutions redefines logistics management by combining cutting-edge technology with a user-centric design. Experience the future of streamlined logistics with a platform that ensures efficiency, security, and reliable communication throughout the supply chain.
-
+<div align="center">
+  <h2>Seamless and Secure Logistics Management</h2>
+  <p>LogiSolutions redefines logistics management by combining cutting-edge technology with a user-centric design. Experience the future of streamlined logistics with a platform that ensures efficiency, security, and reliable communication throughout the supply chain.</p>
+</div>
 ## <div align="center"> Installation </div>
 
 <div align="center"> Follow these steps to set up and run the LogiSolutions Django web app on your local machine:</div>
@@ -78,7 +85,7 @@ LogiSolutions redefines logistics management by combining cutting-edge technolog
 
 
 
-<p align="center" >Feel free to explore the features and functionalities demonstrated in these screenshots!</p>
+
 
    <img src="media/screenshots/LogiSolutions_LogIn_Page.PNG">
 
@@ -120,3 +127,4 @@ LogiSolutions redefines logistics management by combining cutting-edge technolog
 
 ***
 
+<p align="center" >Feel free to explore the features and functionalities demonstrated in these screenshots!</p>
