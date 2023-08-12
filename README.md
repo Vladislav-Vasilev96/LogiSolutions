@@ -80,18 +80,6 @@
 
 ***
 
-   <img src="media/screenshots/Profile_Details_Page.PNG">
-
-***
-
-   <img src="media/screenshots/Vehicles_Catalog_Page.PNG">
-
-***
-
-   <img src="media/screenshots/Details_Vehicle_NotOwner_Page.PNG">
-
-***
-
    <img src="media/screenshots/Add_Cargo_Part1_Page.PNG">
 
 ***
@@ -101,6 +89,18 @@
 ***
 
    <img src="media/screenshots/Cargo_Details_Page.PNG">
+
+***
+
+   <img src="media/screenshots/Profile_Details_Page.PNG">
+
+***
+
+   <img src="media/screenshots/Vehicles_Catalog_Page.PNG">
+
+***
+
+   <img src="media/screenshots/Details_Vehicle_NotOwner_Page.PNG">
 
 ***
 
