@@ -25,7 +25,9 @@
   <p>LogiSolutions redefines logistics management by combining cutting-edge technology with a user-centric design. Experience the future of streamlined logistics with a platform that ensures efficiency, security, and reliable communication throughout the supply chain.</p>
 </div>
 
-<div align="center"> Installation </div>
+##
+## <div align="center"> Installation </div>
+##
 
 <div align="center"> Follow these steps to set up and run the LogiSolutions Django web app on your local machine:</div>
 
