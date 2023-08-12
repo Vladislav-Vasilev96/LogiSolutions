@@ -4,6 +4,7 @@ from pathlib import Path
 import whitenoise as whitenoise
 import whitenoise.middleware
 import mimetypes
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -69,14 +70,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'LogiSolutions.wsgi.application'
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "Logisolutions_db",
-        "USER": "postgres",
-        "PASSWORD": "mypassword",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
+    'default': dj_database_url.config()
+
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "Logisolutions_db",
+    #     "USER": "postgres",
+    #     "PASSWORD": "mypassword",
+    #     "HOST": "127.0.0.1",
+    #     "PORT": "5432",
+    # }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -115,12 +118,13 @@ MEDIA_ROOT = (
         BASE_DIR / 'media/'
 )
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
 mimetypes.add_type("text/css", ".css", True)
 
-
 if os.getcwd() == '/app':
-    DEBUG=False
+    DEBUG = False
