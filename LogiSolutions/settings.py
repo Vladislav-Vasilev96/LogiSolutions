@@ -1,10 +1,4 @@
-import os
 from pathlib import Path
-
-import whitenoise as whitenoise
-import whitenoise.middleware
-import mimetypes
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,7 +6,7 @@ SECRET_KEY = 'django-insecure-+q^!kfa9j$aa^8r8zsew@u*g)fot@v=x)ukt0fmrdcv0qls7$-
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['logisolutions-1b9e4292216f.herokuapp.com']
+ALLOWED_HOSTS = []
 
 DJANGO_APPS = (
     'django.contrib.admin',
@@ -37,8 +31,6 @@ LOGI_SOLUTIONS_APPS = (
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOGI_SOLUTIONS_APPS
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -70,16 +62,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'LogiSolutions.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.config()
-
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql",
-    #     "NAME": "Logisolutions_db",
-    #     "USER": "postgres",
-    #     "PASSWORD": "mypassword",
-    #     "HOST": "127.0.0.1",
-    #     "PORT": "5432",
-    # }
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "Logisolutions_db",
+        "USER": "postgres",
+        "PASSWORD": "mypassword",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -110,7 +100,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 
@@ -118,13 +107,6 @@ MEDIA_ROOT = (
         BASE_DIR / 'media/'
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.CustomUser"
-
-mimetypes.add_type("text/css", ".css", True)
-
-if os.getcwd() == '/app':
-    DEBUG = False
