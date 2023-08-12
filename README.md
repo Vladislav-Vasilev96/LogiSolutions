@@ -6,25 +6,26 @@
 ## <div align="center"> Key Features </div>
 
 <div align="center">
-  <h2>Cargo and Vehicle Matching</h2>
+  <h3>Cargo and Vehicle Matching</h3>
   <p>LogiSolutions simplifies the process of finding the perfect cargo for your vehicle or the right vehicle for your cargo.</p>
 </div>
 
 <div align="center">
-  <h2>Strict Admin Moderation</h2>
+  <h3>Strict Admin Moderation</h3>
   <p>Enhancing security and preventing fake posts, LogiSolutions incorporates strict admin moderation. Every post made by users is subject to approval by an admin. This process guarantees the authenticity of posts and maintains the quality of listings.</p>
 </div>
 
 <div align="center">
-  <h2>User Interaction and Support</h2>
+  <h3>User Interaction and Support</h3>
   <p>Even without logging in, users can ask questions about logistics and receive expert guidance. LogiSolutions' support team is dedicated to promptly responding and offering assistance to anyone seeking information or guidance.</p>
 </div>
 
 <div align="center">
-  <h2>Seamless and Secure Logistics Management</h2>
+  <h3>Seamless and Secure Logistics Management</h3>
   <p>LogiSolutions redefines logistics management by combining cutting-edge technology with a user-centric design. Experience the future of streamlined logistics with a platform that ensures efficiency, security, and reliable communication throughout the supply chain.</p>
 </div>
-## <div align="center"> Installation </div>
+
+<div align="center"> Installation </div>
 
 <div align="center"> Follow these steps to set up and run the LogiSolutions Django web app on your local machine:</div>
 
