@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-+q^!kfa9j$aa^8r8zsew@u*g)fot@v=x)ukt0fmrdcv0qls7$-
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['logisolutions-1b9e4292216f.herokuapp.com/']
+ALLOWED_HOSTS = ['logisolutions-1b9e4292216f.herokuapp.com']
 
 DJANGO_APPS = (
     'django.contrib.admin',
@@ -100,7 +100,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
