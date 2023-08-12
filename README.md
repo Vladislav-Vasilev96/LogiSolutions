@@ -1,17 +1,14 @@
-# Logisolutions
 
- 
+## <div align="center"> Logisolutions </div>
+
 <img src="media/screenshots/LogiSolutions%20Homepage.PNG">
 
-## Table of Contents
-- [Installation](#installation)
-- [Used Technologies](#used-technologies)
-- [License](#license)
-- [Screenshots](#screenshots)
 
-## Installation
 
-Follow these steps to set up and run the LogiSolutions Django web app on your local machine:
+## <div align="center"> Installation </div>
+
+<div align="center"> Follow these steps to set up and run the LogiSolutions Django web app on your local machine:</div>
+
 
 1. **Clone the Repository:** 
    ```bash
@@ -56,27 +53,58 @@ Follow these steps to set up and run the LogiSolutions Django web app on your lo
 <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/> </a>
  <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
+***
+
 <div align="center"><b>MIT License</b></div>
-<p>This project is licensed under the MIT License. For more details, see <a href="LICENSE">LICENSE</a>.</p>
+<p align="center">This project is licensed under the MIT License. For more details, see <a href="LICENSE">LICENSE</a>.</p>
+
+***
+
+<div align="center"><b>Screenshots</b></div>
+
+<p align="center">Here are some screenshots of the LogiSolutions web app in action:</p>
 
 
-<div align="center">Screenshots</div>
 
-<p>Here are some screenshots of the LogiSolutions web app in action:</p>
-
-
-
-<p>Feel free to explore the features and functionalities demonstrated in these screenshots!</p>
+<p align="center" >Feel free to explore the features and functionalities demonstrated in these screenshots!</p>
 
    <img src="media/screenshots/LogiSolutions_LogIn_Page.PNG">
-   
+
+***
+
+   <img src="media/screenshots/Change_Password_Page.PNG">
+
+***
+
    <img src="media/screenshots/LogiSolutions_Contacts_Page.PNG">
+
+***
 
    <img src="media/screenshots/Profile_Details_Page.PNG">
 
-   <img src="media/screenshots/LogiSolutions_Contacts_Page.PNG">
+***
 
-   <img src="media/screenshots/LogiSolutions_Contacts_Page.PNG">
+   <img src="media/screenshots/Vehicles_Catalog_Page.PNG">
 
-   <img src="media/screenshots/LogiSolutions_Contacts_Page.PNG">
+***
+
+   <img src="media/screenshots/Details_Vehicle_NotOwner_Page.PNG">
+
+***
+
+   <img src="media/screenshots/Add_Cargo_Part1_Page.PNG">
+
+***
+
+   <img src="media/screenshots/Cargos_Catolg_Page.PNG">
+
+***
+
+   <img src="media/screenshots/Cargo_Details_Page.PNG">
+
+***
+
+   <img src="media/screenshots/Catalog_Warehouse_Page.PNG">
+
+***
 
