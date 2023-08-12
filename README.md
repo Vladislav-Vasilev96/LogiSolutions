@@ -1,8 +1,7 @@
 # Logisolutions
 
  
-![logo.png](staticfiles%2Fimages%2Flogo.png)
-
+<img src="media/screenshots/LogiSolutions%20Homepage.PNG">
 
 
 ## Installation
