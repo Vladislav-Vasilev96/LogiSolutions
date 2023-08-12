@@ -27,7 +27,7 @@
 
 ##
 ## <div align="center"> Installation </div>
-##
+
 
 <div align="center"> Follow these steps to set up and run the LogiSolutions Django web app on your local machine:</div>
 
