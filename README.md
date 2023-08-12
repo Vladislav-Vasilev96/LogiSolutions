@@ -3,7 +3,19 @@
 
 <img src="media/screenshots/LogiSolutions%20Homepage.PNG">
 
+## Key Features
 
+### Cargo and Vehicle Matching
+LogiSolutions simplifies the process of finding the perfect cargo for your vehicle or the right vehicle for your cargo. With advanced matching algorithms, the platform ensures that your logistics needs are met efficiently and accurately.
+
+### Strict Admin Moderation
+Enhancing security and preventing fake posts, LogiSolutions incorporates strict admin moderation. Every post made by users is subject to approval by an admin. This process guarantees the authenticity of posts and maintains the quality of listings.
+
+### User Interaction and Support
+Even without logging in, users can ask questions about logistics and receive expert guidance. LogiSolutions' support team is dedicated to promptly responding and offering assistance to anyone seeking information or guidance.
+
+## Seamless and Secure Logistics Management
+LogiSolutions redefines logistics management by combining cutting-edge technology with a user-centric design. Experience the future of streamlined logistics with a platform that ensures efficiency, security, and reliable communication throughout the supply chain.
 
 ## <div align="center"> Installation </div>
 
