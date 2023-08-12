@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 import whitenoise as whitenoise
-
+import whitenoise.middleware
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-+q^!kfa9j$aa^8r8zsew@u*g)fot@v=x)ukt0fmrdcv0qls7$-'
