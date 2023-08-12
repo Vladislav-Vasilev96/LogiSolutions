@@ -1,4 +1,7 @@
+import os
 from pathlib import Path
+
+import whitenoise as whitenoise
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -6,7 +9,7 @@ SECRET_KEY = 'django-insecure-+q^!kfa9j$aa^8r8zsew@u*g)fot@v=x)ukt0fmrdcv0qls7$-
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['logisolutions-1b9e4292216f.herokuapp.com/']
 
 DJANGO_APPS = (
     'django.contrib.admin',
@@ -31,6 +34,8 @@ LOGI_SOLUTIONS_APPS = (
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOGI_SOLUTIONS_APPS
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -110,3 +115,7 @@ MEDIA_ROOT = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+
+if os.getcwd() == '/app':
+    DEBUG=False
