@@ -1,12 +1,12 @@
 
-## <div align="center"> Logisolutions </div>
+## <div align="center"> LogiSolutions </div>
 
 <img src="media/screenshots/LogiSolutions%20Homepage.PNG">
 
-## Key Features
+## <div align="center"> Key Features </div>
 
 ### Cargo and Vehicle Matching
-LogiSolutions simplifies the process of finding the perfect cargo for your vehicle or the right vehicle for your cargo. With advanced matching algorithms, the platform ensures that your logistics needs are met efficiently and accurately.
+LogiSolutions simplifies the process of finding the perfect cargo for your vehicle or the right vehicle for your cargo. 
 
 ### Strict Admin Moderation
 Enhancing security and preventing fake posts, LogiSolutions incorporates strict admin moderation. Every post made by users is subject to approval by an admin. This process guarantees the authenticity of posts and maintains the quality of listings.
