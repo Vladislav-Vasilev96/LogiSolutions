@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-+q^!kfa9j$aa^8r8zsew@u*g)fot@v=x)ukt0fmrdcv0qls7$-'
@@ -71,6 +72,7 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views import generic as generic_views
 
-from LogiSolutions.accounts.forms import RegisterUserForm, ChangePasswordForm
+from LogiSolutions.accounts.forms import RegisterUserForm, ChangePasswordForm, LoginUserForm
 from LogiSolutions.accounts.models import CustomUser, Profile
 
 UserModel = get_user_model()
@@ -36,7 +36,7 @@ class RegisterUserView(generic_views.CreateView):
 
 class LoginUserView(LoginView):
     template_name = 'profiles/login.html'
-
+    form_class = LoginUserForm
     def get_success_url(self):
         return reverse_lazy('IndexView')
 

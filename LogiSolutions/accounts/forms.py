@@ -7,6 +7,13 @@ from LogiSolutions.accounts.models import Profile, CustomUser
 UserModel = get_user_model()
 
 
+
+class LoginUserForm(auth_forms.AuthenticationForm):
+    class Meta:
+        model = CustomUser
+        fields = ['email', 'password1']
+
+
 class RegisterUserForm(UserCreationForm):
     email = forms.EmailField()
     password1 = forms.CharField(
