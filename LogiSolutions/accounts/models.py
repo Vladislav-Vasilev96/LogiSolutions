@@ -11,7 +11,7 @@ class CustomUserHandler(BaseUserManager):
 
     def _create_user(self, email, password, **extra_fields):
         if not email:
-            raise ValueError("The given username must be set")
+            raise ValueError("The given email must be set")
 
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
@@ -20,7 +20,7 @@ class CustomUserHandler(BaseUserManager):
 
     def create_user(self, email, password=None, **extra_fields):
         if not email:
-            raise ValueError('You must set a value for the Username field.')
+            raise ValueError('You must set a value for the email field.')
 
         extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
@@ -71,13 +71,17 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
 
 
 class Profile(models.Model):
+    FIRST_NAME_MAX_LENGTH = 30
+    LAST_NAME_MAX_LENGTH=30
+    AGE_MAX_LENGTH_VALIDATOR=80
+    AGE_MIN_LENGTH_VALIDATOR=18
     first_name = models.CharField(
-        max_length=30,
+        max_length=FIRST_NAME_MAX_LENGTH,
         null=False,
         blank=False,
     )
     last_name = models.CharField(
-        max_length=30,
+        max_length=LAST_NAME_MAX_LENGTH,
         null=False,
         blank=False,
     )
@@ -90,8 +94,8 @@ class Profile(models.Model):
         null=True,
         default=0,
         validators=(
-            MaxValueValidator(80),
-            MinValueValidator(18),
+            MaxValueValidator(AGE_MAX_LENGTH_VALIDATOR),
+            MinValueValidator(AGE_MIN_LENGTH_VALIDATOR) ,
         )
 
     )
