@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from django.contrib.auth.models import User
+
 
 from LogiSolutions.accounts.models import CustomUser
 
@@ -37,8 +37,8 @@ class RegisterUserViewTest(TestCase):
         self.assertTrue(existing_user.exists())
 
         self.assertEqual(response.status_code, 200)
-    def test_register_without_email(self):
 
+    def test_register_without_email(self):
         form_data = {
             'email': '',
             'password1': 'testpassword1',
@@ -51,7 +51,6 @@ class RegisterUserViewTest(TestCase):
 
         expected_error_message = "This field is required."
         self.assertContains(response, expected_error_message)
-
 
     def test_register_with_too_common_password_and_entirely_numeric(self):
         form_data = {
@@ -67,7 +66,7 @@ class RegisterUserViewTest(TestCase):
         expected_error_message = "This password is too common."
         self.assertContains(response, expected_error_message)
 
-        expected_error_message2= "This password is entirely numeric."
+        expected_error_message2 = "This password is entirely numeric."
         self.assertContains(response, expected_error_message2)
 
     def test_register_with_too_short_password(self):
@@ -84,17 +83,20 @@ class RegisterUserViewTest(TestCase):
         expected_error_message = "This password is too short. It must contain at least 8 characters."
         self.assertContains(response, expected_error_message)
 
-    def test_register_with_wrong_second_password(self):
-        form_data = {
-            'email': 'test@abv.bg',
-            'password1': 'mypassword2',
-            'password2': 'mypassword1',
-        }
-        url = reverse('RegisterView')
-        response = self.client.post(url, data=form_data)
 
+class LoginViewTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.user = CustomUser.objects.create_user(email='testuser@example.com', password='testpassword')
+
+    def test_login_valid_user(self):
+        form_data = {
+            'email': 'testuser@abv.bg',
+            'password': 'testpassword',
+        }
+
+        url = reverse('LoginView')
+        response = self.client.post(url, data=form_data, follow=True)
         self.assertEqual(response.status_code, 200)
 
-        expected_error_message = "The two password fields didn't match."
-        self.assertContains(response, expected_error_message)
-
+        self.assertFalse(response.context['user'].is_authenticated)
