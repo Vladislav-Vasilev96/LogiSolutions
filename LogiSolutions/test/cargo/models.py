@@ -4,7 +4,6 @@ from django.test import TestCase
 from LogiSolutions.accounts.models import CustomUser
 from LogiSolutions.cargo.models import Cargo
 
-
 class CargoModelTests(TestCase):
     VALID_CARGO_OWNER = {
         'email': 'testuser@example.com',
