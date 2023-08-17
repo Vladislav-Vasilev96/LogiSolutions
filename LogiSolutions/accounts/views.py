@@ -62,6 +62,10 @@ class DetailUserView(generic_views.DetailView):
     model = Profile
     template_name = 'profiles/details-profile.html'
 
+    def get_object(self, queryset=None):
+
+        return self.request.user.profile
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         profile = self.object

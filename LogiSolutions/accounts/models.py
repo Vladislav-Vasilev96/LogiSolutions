@@ -26,16 +26,24 @@ class CustomUserHandler(BaseUserManager):
         extra_fields.setdefault("is_superuser", False)
         return self._create_user(email, password, **extra_fields)
 
-    def create_superuser(self, email, password=None, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
+    def create_superuser(self, email, password=None, ):
+        user = self.create_user(
+            email=self.normalize_email(email),
 
-        if extra_fields.get('is_staff') is not True:
+            password=password,
+        )
+
+        user.is_admin = True
+        user.is_staff = True
+        user.is_superuser = True
+        user.save(using=self._db)
+
+        if user.is_staff is not True:
             raise ValueError('The superuser account requires the is_staff attribute to be set to True.')
-        if extra_fields.get('is_superuser') is not True:
+        if user.is_superuser is not True:
             raise ValueError('The superuser account requires the is_superuser attribute to be set to True.')
-
-        return self._create_user(email, password, **extra_fields)
+        Profile.objects.create(user=user, email=email)
+        return user
 
 
 class CustomUser(PermissionsMixin, AbstractBaseUser):
@@ -63,6 +71,7 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
 
     objects = CustomUserHandler()
 
+
     class Meta:
         default_related_name = 'accounts_custom_users'
 
@@ -72,9 +81,10 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
 
 class Profile(models.Model):
     FIRST_NAME_MAX_LENGTH = 30
-    LAST_NAME_MAX_LENGTH=30
-    AGE_MAX_LENGTH_VALIDATOR=80
-    AGE_MIN_LENGTH_VALIDATOR=18
+    LAST_NAME_MAX_LENGTH = 30
+    AGE_MAX_LENGTH_VALIDATOR = 80
+    AGE_MIN_LENGTH_VALIDATOR = 18
+
     first_name = models.CharField(
         max_length=FIRST_NAME_MAX_LENGTH,
         null=False,
@@ -95,7 +105,7 @@ class Profile(models.Model):
         default=0,
         validators=(
             MaxValueValidator(AGE_MAX_LENGTH_VALIDATOR),
-            MinValueValidator(AGE_MIN_LENGTH_VALIDATOR) ,
+            MinValueValidator(AGE_MIN_LENGTH_VALIDATOR),
         )
 
     )
