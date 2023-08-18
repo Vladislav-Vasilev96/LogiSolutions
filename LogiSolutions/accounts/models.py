@@ -15,7 +15,7 @@ class CustomUserHandler(BaseUserManager):
 
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
-        user.save(using=self._db)
+        # user.save(using=self._db)
         return user
 
     def create_user(self, email, password=None, **extra_fields):
@@ -42,7 +42,8 @@ class CustomUserHandler(BaseUserManager):
             raise ValueError('The superuser account requires the is_staff attribute to be set to True.')
         if user.is_superuser is not True:
             raise ValueError('The superuser account requires the is_superuser attribute to be set to True.')
-        return self._create_user(email, password,)
+        Profile.objects.create(user=user)
+        return self._create_user(email, password)
 
 
 class CustomUser(PermissionsMixin, AbstractBaseUser):
