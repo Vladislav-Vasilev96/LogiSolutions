@@ -42,8 +42,7 @@ class CustomUserHandler(BaseUserManager):
             raise ValueError('The superuser account requires the is_staff attribute to be set to True.')
         if user.is_superuser is not True:
             raise ValueError('The superuser account requires the is_superuser attribute to be set to True.')
-        Profile.objects.create(user=user, email=email)
-        return user
+        return self._create_user(email, password,)
 
 
 class CustomUser(PermissionsMixin, AbstractBaseUser):
