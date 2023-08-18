@@ -24,8 +24,8 @@
                     </p>
                 </div>
 
-                <div id="action-buttons">
                     {% if request.user == object.owner %}
+                        <div class="button-container">
                         <a href="{% url 'edit vehicle' vehicle.pk %}" id="edit-btn">Edit</a>
                         <a href="{% url 'delete vehicle' vehicle.pk %}" id="delete-btn">Delete</a>
                 </div>
